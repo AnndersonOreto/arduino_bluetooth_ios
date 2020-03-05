@@ -14,6 +14,7 @@
 		A79E2B0A24117045005860D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A79E2B0924117045005860D9 /* Assets.xcassets */; };
 		A79E2B0D24117045005860D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79E2B0B24117045005860D9 /* LaunchScreen.storyboard */; };
 		A79E2B1824117046005860D9 /* GeloouTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E2B1724117046005860D9 /* GeloouTests.swift */; };
+		A79E2B2324118B48005860D9 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E2B2224118B48005860D9 /* CircularProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A79E2B1324117046005860D9 /* GeloouTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeloouTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79E2B1724117046005860D9 /* GeloouTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeloouTests.swift; sourceTree = "<group>"; };
 		A79E2B1924117046005860D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A79E2B2224118B48005860D9 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				A79E2B0924117045005860D9 /* Assets.xcassets */,
 				A79E2B0B24117045005860D9 /* LaunchScreen.storyboard */,
 				A79E2B0E24117045005860D9 /* Info.plist */,
+				A79E2B2224118B48005860D9 /* CircularProgressView.swift */,
 			);
 			path = Geloou;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			files = (
 				A79E2B0524117043005860D9 /* ViewController.swift in Sources */,
 				A79E2B0124117043005860D9 /* AppDelegate.swift in Sources */,
+				A79E2B2324118B48005860D9 /* CircularProgressView.swift in Sources */,
 				A79E2B0324117043005860D9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
