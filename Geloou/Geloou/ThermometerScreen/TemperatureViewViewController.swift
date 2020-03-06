@@ -17,10 +17,18 @@ class TemperatureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         testSlider.transform = CGAffineTransform(rotationAngle: CGFloat( -Double.pi/2 ))
-        
+        testLabel.text = String(Int(testSlider.value)) + "ºC"
     }
     
     @IBAction func slider(_ sender: UISlider) {
-        testLabel.text = String( Int(testSlider.value) )
+        testLabel.text = String( Int(testSlider.value)) + "ºC"
+        
+        if testSlider.value >= 12 {
+            testLabel.textColor = .systemOrange
+        } else if testSlider.value >= 7 {
+            testLabel.textColor = .systemYellow
+        } else {
+            testLabel.textColor = .systemTeal
+        }
     }
 }
