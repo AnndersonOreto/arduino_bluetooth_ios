@@ -10,8 +10,10 @@ import UIKit
 
 class CircularProgressView: UIView {
     
+    // MARK: - Public properties
+    
     /// Set the progress bar's color.
-    public var progressCircularBarColor = UIColor.init(red: 32/255, green: 195/255, blue: 208/255, alpha: 1).cgColor
+    public var progressBarColor = UIColor.init(red: 32/255, green: 195/255, blue: 208/255, alpha: 1).cgColor
     
     /// Color the track that is behind the progress bar.
     public var trackingBarColor = UIColor.init(red: 185/255, green: 232/255, blue: 234/255, alpha: 1).cgColor
@@ -22,9 +24,14 @@ class CircularProgressView: UIView {
     /// The central area of the circular progress view is set wirh this color.
     public var circularBackgroundColor = UIColor.white.cgColor
     
-    let centralAreaLayer = CAShapeLayer()
+    /// The circular central area layer of the progress view.
+    public let centralAreaLayer = CAShapeLayer()
+    
+    
+    // MARK: - Private properties
     
     private var pulsatingLayer: CAShapeLayer!
+    
     private var radius: CGFloat = 0.0
     
     private let progressContainer: UIView = {
@@ -34,11 +41,15 @@ class CircularProgressView: UIView {
         return view
     }()
     
-    private lazy var shapeLayer: CAShapeLayer = {
+    private lazy var progressBarLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         return layer
     }()
     
+    
+    // MARK: - Init method
+    
+    /// Inform the radius of the circular progress view
     init(radius: CGFloat) {
         self.radius = radius * 0.75
         super.init(frame: .zero)
@@ -71,6 +82,8 @@ class CircularProgressView: UIView {
         //pulsatingLayer.fillColor = pulsingColor
         pulsatingLayer.position = center
         progressContainer.layer.addSublayer(pulsatingLayer)
+        
+        // Start animation of outer pulsing circle
         animatePulsatingLayer()
         
         centralAreaLayer.path = circularPath.cgPath
@@ -80,36 +93,39 @@ class CircularProgressView: UIView {
         centralAreaLayer.position = center
         progressContainer.layer.addSublayer(centralAreaLayer)
         
-        shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = progressCircularBarColor
-        shapeLayer.lineWidth = 10
-        shapeLayer.lineCap = .round
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.position = center
-        shapeLayer.strokeEnd = 0 // how many in porcentage is completed (0.0 to 1). CGFloat
-        shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1) // rotate -90 degrees
-        progressContainer.layer.addSublayer(shapeLayer)
-                
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        
+        progressBarLayer.path = circularPath.cgPath
+        progressBarLayer.strokeColor = progressBarColor
+        progressBarLayer.lineWidth = 10
+        progressBarLayer.lineCap = .round
+        progressBarLayer.fillColor = UIColor.clear.cgColor
+        progressBarLayer.position = center
+        progressBarLayer.strokeEnd = 0 // how many in porcentage is completed (0.0 to 1). CGFloat
+        progressBarLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1) // rotate -90 degrees
+        progressContainer.layer.addSublayer(progressBarLayer)
+                        
     }
     
+    // MARK: - Progress Bar animation methods
     
-    
-    @objc private func handleTap() {
-        startCircleAnimation()
-    }
-    
-    fileprivate func startCircleAnimation() {
+    /// Start  animation of the circle progress bar at o'clock position.
+    public func startProgressBarAnimation() {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        shapeLayer.strokeEnd = 0 // start on o'clock position. How many in porcentage is completed (0.0 to 1). CGFloat
+        progressBarLayer.strokeEnd = 0 // start on o'clock position. How many in porcentage is completed (0.0 to 1). CGFloat
         basicAnimation.toValue = 1
         basicAnimation.duration = 2 //in seconds
         basicAnimation.fillMode = .forwards
         basicAnimation.isRemovedOnCompletion = false
         
-        shapeLayer.add(basicAnimation, forKey: "doAnimation")
+        progressBarLayer.add(basicAnimation, forKey: "doAnimation")
+        
     }
+    
+    /// Remove progress bar animation.
+    public func stopProgressBarAnimation() {
+        progressBarLayer.removeAnimation(forKey: "doAnimation")
+    }
+    
+    // MARK: - Pulsing circle animation methods
     
     func animatePulsatingLayer() {
         let animation = CABasicAnimation(keyPath: "transform.scale")
@@ -122,5 +138,4 @@ class CircularProgressView: UIView {
         animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         pulsatingLayer.add(animation, forKey: "pulsingLayer")
     }
-    
 }

@@ -21,14 +21,17 @@ class BluetoothConnectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         let bluetoothColor = UIColor(red: 24/255, green: 62/255, blue: 140/255, alpha: 1)
         
+        // Set circular progress view appearence
         circularProgressView = CircularProgressView(radius: containerView.frame.height / 2)
-       
         circularProgressView.trackingBarColor = bluetoothColor.withAlphaComponent(0.1).cgColor
         circularProgressView.pulsingColor = bluetoothColor.withAlphaComponent(0.7).cgColor
         circularProgressView.centralAreaLayer.fillColor = bluetoothColor.cgColor
@@ -40,6 +43,11 @@ class BluetoothConnectViewController: UIViewController {
 
         connectButton.backgroundColor = bluetoothColor
        
+    }
+    
+    
+    @objc private func handleTap() {
+        circularProgressView.startProgressBarAnimation()
     }
     
     fileprivate func setCircularProgressConstraints() {
