@@ -10,28 +10,37 @@ import UIKit
 
 class TemperatureViewController: UIViewController {
     
-    @IBOutlet weak var testLabel: UILabel!
-    @IBOutlet weak var testSlider: UISlider!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var temperatureSlider: UISlider!
     @IBOutlet weak var imageTemperature: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testSlider.transform = CGAffineTransform(rotationAngle: CGFloat( -Double.pi/2 ))
-        testLabel.text = String(Int(testSlider.value)) + "ºC"
+        //Rotate the slider vertically
+        temperatureSlider.transform = CGAffineTransform(rotationAngle: CGFloat( -Double.pi/2 ))
+        temperatureLabel.text = String(Int(temperatureSlider.value)) + "ºC"
     }
     
     @IBAction func slider(_ sender: UISlider) {
-        testLabel.text = String( Int(testSlider.value)) + "ºC"
+        //Change label according slider value
+        temperatureLabel.text = String( Int(temperatureSlider.value)) + "ºC"
         
-        if testSlider.value >= 12 {
-            testLabel.textColor = .systemOrange
-            testSlider.thumbTintColor = .systemOrange
-        } else if testSlider.value >= 7 {
-            testLabel.textColor = .systemYellow
-            testSlider.thumbTintColor = .systemYellow
+        //Change label and slider colors according temperature
+        if temperatureSlider.value >= 12 {
+            temperatureLabel.textColor = .systemOrange
+            temperatureSlider.thumbTintColor = .systemOrange
+        } else if temperatureSlider.value >= 7 {
+            temperatureLabel.textColor = .systemYellow
+            temperatureSlider.thumbTintColor = .systemYellow
         } else {
-            testLabel.textColor = .systemTeal
-            testSlider.thumbTintColor = .systemTeal
+            temperatureLabel.textColor = .systemTeal
+            temperatureSlider.thumbTintColor = .systemTeal
         }
     }
+    
+    //----------------------------
+    //Save temperature value here:
+    //----------------------------
+    
+    //For this use slider.value 
 }

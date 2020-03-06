@@ -56,8 +56,8 @@
                     </view>
                     <connections>
                         <outlet property="imageTemperature" destination="Adj-Cz-ze1" id="EOo-Zw-UFj"/>
-                        <outlet property="testLabel" destination="TPu-Bg-F0U" id="AqS-pV-HkW"/>
-                        <outlet property="testSlider" destination="0lB-LN-k9v" id="wD4-km-yBg"/>
+                        <outlet property="temperatureLabel" destination="TPu-Bg-F0U" id="AqS-pV-HkW"/>
+                        <outlet property="temperatureSlider" destination="0lB-LN-k9v" id="wD4-km-yBg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJ9-fi-jnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
