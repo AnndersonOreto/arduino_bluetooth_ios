@@ -25,10 +25,13 @@ class TemperatureViewController: UIViewController {
         
         if testSlider.value >= 12 {
             testLabel.textColor = .systemOrange
+            testSlider.thumbTintColor = .systemOrange
         } else if testSlider.value >= 7 {
             testLabel.textColor = .systemYellow
+            testSlider.thumbTintColor = .systemYellow
         } else {
             testLabel.textColor = .systemTeal
+            testSlider.thumbTintColor = .systemTeal
         }
     }
 }
