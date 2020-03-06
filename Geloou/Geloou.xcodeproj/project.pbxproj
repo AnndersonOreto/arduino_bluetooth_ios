@@ -14,6 +14,8 @@
 		A79E2B0A24117045005860D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A79E2B0924117045005860D9 /* Assets.xcassets */; };
 		A79E2B0D24117045005860D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79E2B0B24117045005860D9 /* LaunchScreen.storyboard */; };
 		A79E2B1824117046005860D9 /* GeloouTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E2B1724117046005860D9 /* GeloouTests.swift */; };
+		AB0B3B5224117B0100B2168B /* Temperature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0B3B5124117B0100B2168B /* Temperature.storyboard */; };
+		AB0B3B5424117B2000B2168B /* TemperatureViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0B3B5324117B2000B2168B /* TemperatureViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		A79E2B1324117046005860D9 /* GeloouTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeloouTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79E2B1724117046005860D9 /* GeloouTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeloouTests.swift; sourceTree = "<group>"; };
 		A79E2B1924117046005860D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB0B3B5124117B0100B2168B /* Temperature.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temperature.storyboard; sourceTree = "<group>"; };
+		AB0B3B5324117B2000B2168B /* TemperatureViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		A79E2AFF24117043005860D9 /* Geloou */ = {
 			isa = PBXGroup;
 			children = (
+				AB0B3B5024117AC900B2168B /* ThermometerScreen */,
 				A79E2B0024117043005860D9 /* AppDelegate.swift */,
 				A79E2B0224117043005860D9 /* SceneDelegate.swift */,
 				A79E2B0424117043005860D9 /* ViewController.swift */,
@@ -97,6 +102,15 @@
 				A79E2B1924117046005860D9 /* Info.plist */,
 			);
 			path = GeloouTests;
+			sourceTree = "<group>";
+		};
+		AB0B3B5024117AC900B2168B /* ThermometerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB0B3B5124117B0100B2168B /* Temperature.storyboard */,
+				AB0B3B5324117B2000B2168B /* TemperatureViewViewController.swift */,
+			);
+			path = ThermometerScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +197,7 @@
 				A79E2B0D24117045005860D9 /* LaunchScreen.storyboard in Resources */,
 				A79E2B0A24117045005860D9 /* Assets.xcassets in Resources */,
 				A79E2B0824117043005860D9 /* Main.storyboard in Resources */,
+				AB0B3B5224117B0100B2168B /* Temperature.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +217,7 @@
 			files = (
 				A79E2B0524117043005860D9 /* ViewController.swift in Sources */,
 				A79E2B0124117043005860D9 /* AppDelegate.swift in Sources */,
+				AB0B3B5424117B2000B2168B /* TemperatureViewViewController.swift in Sources */,
 				A79E2B0324117043005860D9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

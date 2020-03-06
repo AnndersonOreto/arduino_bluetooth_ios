@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4gw-g0-QO0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Temperature View Controller-->
+        <scene sceneID="tTk-py-Vxx">
+            <objects>
+                <viewController id="4gw-g0-QO0" customClass="TemperatureViewController" customModule="Geloou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xYc-bu-pdw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPu-Bg-F0U">
+                                <rect key="frame" x="167" y="89" width="80.5" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="temperaturaIdeal" translatesAutoresizingMaskIntoConstraints="NO" id="Adj-Cz-ze1">
+                                <rect key="frame" x="14.5" y="173" width="385" height="550"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="385" id="hU5-if-0iS"/>
+                                    <constraint firstAttribute="height" constant="550" id="jai-6m-8r3"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="0lB-LN-k9v">
+                                <rect key="frame" x="10" y="433" width="404" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="Jx7-2Z-P07"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="slider:" destination="4gw-g0-QO0" eventType="valueChanged" id="6AJ-mg-iGL"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0lB-LN-k9v" firstAttribute="leading" secondItem="jAi-Iy-w8p" secondAttribute="leading" constant="12" id="6Hm-ph-Pw9"/>
+                            <constraint firstItem="Adj-Cz-ze1" firstAttribute="centerX" secondItem="xYc-bu-pdw" secondAttribute="centerX" id="HE8-EL-7db"/>
+                            <constraint firstItem="TPu-Bg-F0U" firstAttribute="top" secondItem="jAi-Iy-w8p" secondAttribute="top" constant="45" id="ekk-O5-JW2"/>
+                            <constraint firstItem="TPu-Bg-F0U" firstAttribute="centerX" secondItem="xYc-bu-pdw" secondAttribute="centerX" id="kO0-Zz-JOc"/>
+                            <constraint firstItem="0lB-LN-k9v" firstAttribute="centerY" secondItem="Adj-Cz-ze1" secondAttribute="centerY" id="oZO-ih-7eD"/>
+                            <constraint firstItem="jAi-Iy-w8p" firstAttribute="trailing" secondItem="0lB-LN-k9v" secondAttribute="trailing" constant="2" id="tSA-HW-eqN"/>
+                            <constraint firstItem="Adj-Cz-ze1" firstAttribute="centerY" secondItem="xYc-bu-pdw" secondAttribute="centerY" id="uML-Ss-6ib"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jAi-Iy-w8p"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageTemperature" destination="Adj-Cz-ze1" id="EOo-Zw-UFj"/>
+                        <outlet property="testLabel" destination="TPu-Bg-F0U" id="AqS-pV-HkW"/>
+                        <outlet property="testSlider" destination="0lB-LN-k9v" id="wD4-km-yBg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJ9-fi-jnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="459"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="temperaturaIdeal" width="933" height="1348"/>
+    </resources>
+</document>
