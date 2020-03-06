@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZFp-Xl-WlC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bluetooth Connect View Controller-->
+        <scene sceneID="vyc-BU-cBR">
+            <objects>
+                <viewController id="ZFp-Xl-WlC" customClass="BluetoothConnectViewController" customModule="Geloou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ogd-7l-5gN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utq-x7-3HA">
+                                <rect key="frame" x="41.5" y="282.5" width="331" height="331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="utq-x7-3HA" secondAttribute="height" multiplier="1:1" id="rtA-Gn-Ph5"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgW-HD-jIp">
+                                <rect key="frame" x="41.5" y="782" width="331" height="50"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bBx-Ec-fMh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Conectar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="connectButton:" destination="ZFp-Xl-WlC" eventType="touchUpInside" id="2h3-VI-Zun"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluetooth-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ir7-ls-AQS">
+                                <rect key="frame" x="124" y="332" width="166" height="232"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ir7-ls-AQS" firstAttribute="centerY" secondItem="ogd-7l-5gN" secondAttribute="centerY" id="9FF-cJ-eKA"/>
+                            <constraint firstItem="ir7-ls-AQS" firstAttribute="width" secondItem="utq-x7-3HA" secondAttribute="width" multiplier="0.5" id="Itk-MM-r1D"/>
+                            <constraint firstItem="DsG-vb-S6x" firstAttribute="bottom" secondItem="xgW-HD-jIp" secondAttribute="bottom" constant="30" id="KXg-FV-AqG"/>
+                            <constraint firstItem="utq-x7-3HA" firstAttribute="centerX" secondItem="ogd-7l-5gN" secondAttribute="centerX" id="Mzz-Oe-uwB"/>
+                            <constraint firstItem="utq-x7-3HA" firstAttribute="width" secondItem="ogd-7l-5gN" secondAttribute="width" multiplier="0.8" id="Tin-E7-pPd"/>
+                            <constraint firstItem="ir7-ls-AQS" firstAttribute="centerX" secondItem="ogd-7l-5gN" secondAttribute="centerX" id="YZb-yH-xqV"/>
+                            <constraint firstItem="utq-x7-3HA" firstAttribute="centerY" secondItem="ogd-7l-5gN" secondAttribute="centerY" id="a6y-gN-ePj"/>
+                            <constraint firstItem="xgW-HD-jIp" firstAttribute="centerX" secondItem="ogd-7l-5gN" secondAttribute="centerX" id="fGC-k7-ab4"/>
+                            <constraint firstItem="ir7-ls-AQS" firstAttribute="height" secondItem="utq-x7-3HA" secondAttribute="height" multiplier="0.7" id="g1I-ZB-viT"/>
+                            <constraint firstItem="xgW-HD-jIp" firstAttribute="width" secondItem="utq-x7-3HA" secondAttribute="width" id="uQb-of-hOc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DsG-vb-S6x"/>
+                    </view>
+                    <connections>
+                        <outlet property="connectButton" destination="xgW-HD-jIp" id="6ff-Im-q1Z"/>
+                        <outlet property="containerView" destination="utq-x7-3HA" id="NN6-r3-uyd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wp6-pr-M6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-243" y="-103"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bluetooth-logo" width="594" height="795"/>
+    </resources>
+</document>
