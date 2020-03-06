@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZFp-Xl-WlC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZFp-Xl-WlC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--Bluetooth Connect View Controller-->
         <scene sceneID="vyc-BU-cBR">
             <objects>
-                <viewController id="ZFp-Xl-WlC" customClass="BluetoothConnectViewController" customModule="Geloou" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="ZFp-Xl-WlC" customClass="BluetoothConnectViewController" customModule="Geloou" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ogd-7l-5gN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,11 +62,22 @@
                     <connections>
                         <outlet property="connectButton" destination="xgW-HD-jIp" id="6ff-Im-q1Z"/>
                         <outlet property="containerView" destination="utq-x7-3HA" id="NN6-r3-uyd"/>
+                        <segue destination="JYL-ro-Mrf" kind="show" identifier="drinklistviewcontroller" id="4DR-Qy-8EL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wp6-pr-M6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-243" y="-103"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="uJe-rA-mjB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="JYL-ro-Mrf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="TXg-dB-orA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCW-FX-Kxw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="-187"/>
         </scene>
     </scenes>
     <resources>

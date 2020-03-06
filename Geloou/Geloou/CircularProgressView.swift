@@ -108,11 +108,11 @@ class CircularProgressView: UIView {
     // MARK: - Progress Bar animation methods
     
     /// Start  animation of the circle progress bar at o'clock position.
-    public func startProgressBarAnimation() {
+    public func startProgressBarAnimation(seconds: Double) {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         progressBarLayer.strokeEnd = 0 // start on o'clock position. How many in porcentage is completed (0.0 to 1). CGFloat
         basicAnimation.toValue = 1
-        basicAnimation.duration = 2 //in seconds
+        basicAnimation.duration = seconds //in seconds
         basicAnimation.fillMode = .forwards
         basicAnimation.isRemovedOnCompletion = false
         

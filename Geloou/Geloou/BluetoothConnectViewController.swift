@@ -17,6 +17,7 @@ class BluetoothConnectViewController: UIViewController {
     @IBOutlet weak var connectButton: UIButton!
     
     @IBAction func connectButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "drinklistviewcontroller", sender: self)
     }
     
     override func viewDidLoad() {
@@ -47,7 +48,7 @@ class BluetoothConnectViewController: UIViewController {
     
     
     @objc private func handleTap() {
-        circularProgressView.startProgressBarAnimation()
+        circularProgressView.startProgressBarAnimation(seconds: 2)
     }
     
     fileprivate func setCircularProgressConstraints() {
