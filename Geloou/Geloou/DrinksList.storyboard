@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TOe-VX-iMF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drinks List View Controller-->
+        <scene sceneID="nNo-vS-vm7">
+            <objects>
+                <viewController storyboardIdentifier="DrinksList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TOe-VX-iMF" customClass="DrinksListViewController" customModule="Geloou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="drinksListStoryBoard" id="QyO-ZM-UXg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual bebida você deseja gelar?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wn1-WW-bU6">
+                                <rect key="frame" x="65.5" y="134" width="283.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OKx-Yq-VJY">
+                                <rect key="frame" x="0.0" y="204.5" width="414" height="691.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="drinkCell" textLabel="vIo-Kq-912" style="IBUITableViewCellStyleDefault" id="Ibb-DZ-q75">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ibb-DZ-q75" id="oYy-pg-7Rg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vIo-Kq-912">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3Uz-Rb-fVf" firstAttribute="trailing" secondItem="OKx-Yq-VJY" secondAttribute="trailing" id="44L-bO-CJi"/>
+                            <constraint firstItem="wn1-WW-bU6" firstAttribute="centerX" secondItem="QyO-ZM-UXg" secondAttribute="centerX" id="8dJ-ny-p31"/>
+                            <constraint firstItem="wn1-WW-bU6" firstAttribute="top" secondItem="3Uz-Rb-fVf" secondAttribute="top" constant="46" id="CUx-bX-ACL"/>
+                            <constraint firstItem="OKx-Yq-VJY" firstAttribute="top" secondItem="wn1-WW-bU6" secondAttribute="bottom" constant="45" id="FKO-QH-9FN"/>
+                            <constraint firstAttribute="bottom" secondItem="OKx-Yq-VJY" secondAttribute="bottom" id="Mo9-Xw-QW6"/>
+                            <constraint firstItem="OKx-Yq-VJY" firstAttribute="leading" secondItem="3Uz-Rb-fVf" secondAttribute="leading" id="hN4-tV-EsY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Uz-Rb-fVf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fa5-Yw-ybB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="drinksTableView" destination="OKx-Yq-VJY" id="DQq-4o-TQq"/>
+                        <segue destination="I8L-GC-xcJ" kind="show" identifier="selectedDrinkSegue" id="GxX-8Q-kgM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCv-wk-uG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1823.1884057971015" y="-43.526785714285715"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="nXD-7t-tHt">
+            <objects>
+                <viewController id="PuM-fb-ujX" customClass="DetailViewController" customModule="Geloou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rif-it-DpC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JOq-zs-Fgd"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="FpJ-Fe-WhI">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" style="plain" id="TJo-p0-qls">
+                            <color key="tintColor" red="0.28235294119999998" green="0.92156862750000001" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kxe-hj-gcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4073.913043478261" y="-30.133928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fFB-fK-U8b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I8L-GC-xcJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cYN-ng-EPu"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="nJ8-25-bhA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PuM-fb-ujX" kind="relationship" relationship="rootViewController" id="cwh-Fe-wti"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VwT-CY-mA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3163.7681159420295" y="-30.133928571428569"/>
+        </scene>
+    </scenes>
+</document>
