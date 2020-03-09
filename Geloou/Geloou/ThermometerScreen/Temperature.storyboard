@@ -16,17 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="temperaturaIdeal" translatesAutoresizingMaskIntoConstraints="NO" id="Adj-Cz-ze1">
-                                <rect key="frame" x="14.5" y="173" width="385" height="550"/>
+                                <rect key="frame" x="14.5" y="178" width="385" height="540"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="385" id="hU5-if-0iS"/>
-                                    <constraint firstAttribute="height" constant="550" id="jai-6m-8r3"/>
+                                    <constraint firstAttribute="height" constant="540" id="jai-6m-8r3"/>
                                 </constraints>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="0lB-LN-k9v">
-                                <rect key="frame" x="10" y="433" width="404" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="Jx7-2Z-P07"/>
-                                </constraints>
+                                <rect key="frame" x="10" y="448" width="404" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="thumbTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,7 +32,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPu-Bg-F0U">
-                                <rect key="frame" x="117.5" y="733" width="179" height="89"/>
+                                <rect key="frame" x="117.5" y="728" width="179" height="94"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="80"/>
                                 <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -47,8 +44,8 @@
                             <constraint firstItem="0lB-LN-k9v" firstAttribute="leading" secondItem="jAi-Iy-w8p" secondAttribute="leading" constant="12" id="6Hm-ph-Pw9"/>
                             <constraint firstItem="jAi-Iy-w8p" firstAttribute="bottom" secondItem="TPu-Bg-F0U" secondAttribute="bottom" constant="40" id="7W1-Yp-9qP"/>
                             <constraint firstItem="Adj-Cz-ze1" firstAttribute="centerX" secondItem="xYc-bu-pdw" secondAttribute="centerX" id="HE8-EL-7db"/>
+                            <constraint firstItem="TPu-Bg-F0U" firstAttribute="top" secondItem="0lB-LN-k9v" secondAttribute="bottom" constant="250" id="ZDs-MX-03W"/>
                             <constraint firstItem="TPu-Bg-F0U" firstAttribute="centerX" secondItem="xYc-bu-pdw" secondAttribute="centerX" id="kO0-Zz-JOc"/>
-                            <constraint firstItem="0lB-LN-k9v" firstAttribute="centerY" secondItem="Adj-Cz-ze1" secondAttribute="centerY" id="oZO-ih-7eD"/>
                             <constraint firstItem="jAi-Iy-w8p" firstAttribute="trailing" secondItem="0lB-LN-k9v" secondAttribute="trailing" constant="2" id="tSA-HW-eqN"/>
                             <constraint firstItem="Adj-Cz-ze1" firstAttribute="centerY" secondItem="xYc-bu-pdw" secondAttribute="centerY" id="uML-Ss-6ib"/>
                         </constraints>

@@ -14,6 +14,8 @@ class TemperatureViewController: UIViewController {
     @IBOutlet weak var temperatureSlider: UISlider!
     @IBOutlet weak var imageTemperature: UIImageView!
     
+    var testLayer = CAShapeLayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Rotate the slider vertically
@@ -42,5 +44,5 @@ class TemperatureViewController: UIViewController {
     //Save temperature value here:
     //----------------------------
     
-    //For this use slider.value 
+    //For this use slider.value
 }
