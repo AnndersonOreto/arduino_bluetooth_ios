@@ -17,6 +17,9 @@
 		A79E2B0A24117045005860D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A79E2B0924117045005860D9 /* Assets.xcassets */; };
 		A79E2B0D24117045005860D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79E2B0B24117045005860D9 /* LaunchScreen.storyboard */; };
 		A79E2B1824117046005860D9 /* GeloouTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E2B1724117046005860D9 /* GeloouTests.swift */; };
+		CF79182424168E820021F2A1 /* DrinksList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF79182324168E820021F2A1 /* DrinksList.storyboard */; };
+		CF79182624168E940021F2A1 /* DrinksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79182524168E940021F2A1 /* DrinksListViewController.swift */; };
+		CF791828241697D90021F2A1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF791827241697D90021F2A1 /* DetailViewController.swift */; };
 		A79E2B2324118B48005860D9 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E2B2224118B48005860D9 /* CircularProgressView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		A79E2B1324117046005860D9 /* GeloouTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeloouTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79E2B1724117046005860D9 /* GeloouTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeloouTests.swift; sourceTree = "<group>"; };
 		A79E2B1924117046005860D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF79182324168E820021F2A1 /* DrinksList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrinksList.storyboard; sourceTree = "<group>"; };
+		CF79182524168E940021F2A1 /* DrinksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListViewController.swift; sourceTree = "<group>"; };
+		CF791827241697D90021F2A1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A79E2B2224118B48005860D9 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +97,9 @@
 				A79E2B0224117043005860D9 /* SceneDelegate.swift */,
 				A79E2B0424117043005860D9 /* ViewController.swift */,
 				A79E2B0624117043005860D9 /* Main.storyboard */,
+				CF79182324168E820021F2A1 /* DrinksList.storyboard */,
+				CF79182524168E940021F2A1 /* DrinksListViewController.swift */,
+				CF791827241697D90021F2A1 /* DetailViewController.swift */,
 				A79E2B0924117045005860D9 /* Assets.xcassets */,
 				A79E2B0B24117045005860D9 /* LaunchScreen.storyboard */,
 				A79E2B0E24117045005860D9 /* Info.plist */,
@@ -195,6 +204,7 @@
 				A79E2B0D24117045005860D9 /* LaunchScreen.storyboard in Resources */,
 				A79E2B0A24117045005860D9 /* Assets.xcassets in Resources */,
 				A79E2B0824117043005860D9 /* Main.storyboard in Resources */,
+				CF79182424168E820021F2A1 /* DrinksList.storyboard in Resources */,
 				A767BC242411B71F0081CF66 /* BluetoothScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,8 +227,10 @@
 				260525222412C96600B9AE0A /* DrinkListViewController.swift in Sources */,
 				A79E2B0524117043005860D9 /* ViewController.swift in Sources */,
 				A79E2B0124117043005860D9 /* AppDelegate.swift in Sources */,
+				CF791828241697D90021F2A1 /* DetailViewController.swift in Sources */,
 				A79E2B2324118B48005860D9 /* CircularProgressView.swift in Sources */,
 				A79E2B0324117043005860D9 /* SceneDelegate.swift in Sources */,
+				CF79182624168E940021F2A1 /* DrinksListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
