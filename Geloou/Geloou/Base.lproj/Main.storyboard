@@ -64,6 +64,7 @@
                                 </state>
                                 <connections>
                                     <action selector="confirmationAction:" destination="EiV-6B-EP3" eventType="touchUpInside" id="aDS-JF-KQl"/>
+                                    <segue destination="yjv-zV-2zh" kind="show" id="Xor-KH-5dQ"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTV-d5-GJl">
@@ -159,6 +160,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpF-y3-Eg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-339.13043478260875" y="97.767857142857139"/>
+        </scene>
+        <!--DrinksList-->
+        <scene sceneID="64g-AP-jjX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DrinksList" id="yjv-zV-2zh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cd5-J3-691"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iPc-Fg-w5T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="98"/>
         </scene>
     </scenes>
     <resources>

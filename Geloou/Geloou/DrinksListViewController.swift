@@ -11,8 +11,10 @@ import UIKit
 class DrinksListViewController: UIViewController {
 
     
-    let drinks: [String] = ["Cerveja", "Vinho", "Água", "Refri"]
-    var drinkSelected: String = ""
+    let drinks: [(String, [String])] =   [("Cerveja", ["Lata","Garrafa","Latão"]),
+                                          ("Vinho", ["Garrafa"])]
+    
+    var drinkSelected: (String, [String]) = ("", [])
     
     @IBOutlet weak var drinksTableView: UITableView!
     
@@ -27,17 +29,12 @@ class DrinksListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectedDrinkSegue" {
-            if let nextViewController = segue.destination as? UINavigationController {
-                let vc = nextViewController.viewControllers.first as? DetailViewController
-                
-                vc?.drinkTitle = drinkSelected
-                
+            if let nextViewController = segue.destination as? DrinkTypeViewController {
+                nextViewController.drinkSelectedAndAmount = drinkSelected
             }
         }
     }
     
-
-
 }
 
 extension DrinksListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -47,12 +44,13 @@ extension DrinksListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell")
-        cell?.textLabel?.text = drinks[indexPath.row]
+        cell?.textLabel?.text = drinks[indexPath.row].0
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        drinkSelected = drinks[indexPath.row]
+        drinkSelected.0 = drinks[indexPath.row].0
+        drinkSelected.1 = drinks[indexPath.row].1
         performSegue(withIdentifier: "selectedDrinkSegue", sender: nil)
     }
     
