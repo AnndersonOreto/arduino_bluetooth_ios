@@ -50,13 +50,15 @@ class ViewController: UIViewController, WCSessionDelegate  {
         message.timeLeft = 5
         
             
-        WCSession.default.sendMessage(message.toDict(), replyHandler: { (replyMessage) in
-            print("replyMessage")
-            print(replyMessage)
-        }) { error in
-            print("Deu error")
-            print(error.localizedDescription)
-        }
+//        WCSession.default.sendMessage(message.toDict(), replyHandler: { (replyMessage) in
+//            print("replyMessage")
+//            print(replyMessage)
+//        }) { error in
+//            print("Deu error")
+//            print(error.localizedDescription)
+//        }
+        
+        WCSession.default.transferCurrentComplicationUserInfo(message.toDict())
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
@@ -70,6 +72,8 @@ class ViewController: UIViewController, WCSessionDelegate  {
     func sessionDidDeactivate(_ session: WCSession) {
         
     }
+    
+    
     
 }
 
