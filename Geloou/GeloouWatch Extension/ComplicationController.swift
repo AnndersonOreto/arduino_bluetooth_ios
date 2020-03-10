@@ -59,10 +59,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         switch complication.family {
         case .circularSmall:
-            template = createCircularSmallTemplate(percent: defaultPercent)
+            template = createCircularSmallTemplate(percent: defaultPercent, currentTemperature: defaultCurrentTemp)
         
         case .extraLarge:
-            template = createExtraLargeTemplate(percent: defaultPercent)
+            template = createExtraLargeTemplate(percent: defaultPercent, currentTemperature: defaultCurrentTemp)
         
         case .graphicBezel:
             template = createGraphicBezel(percent: defaultPercent, currentTemperature: defaultCurrentTemp, timeLeft: defaultTime.description)
@@ -77,13 +77,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template = createGraphicRectangularTemplate(percent: defaultPercent, timeLeft: defaultTime.description)
             
         case .modularSmall:
-            template = createModularSmallTemplate(percent: defaultPercent)
+            template = createModularSmallTemplate(percent: defaultPercent, currentTemperature: defaultCurrentTemp)
             
         case .modularLarge:
             template = createModularLargeTemplate(timeLeft: defaultTime.description)
             
         case .utilitarianSmall:
-            template = createUtilitarianSmallTemplate(percent: defaultPercent)
+            template = createUtilitarianSmallTemplate(percent: defaultPercent, currentTemperature: defaultCurrentTemp)
             
         case .utilitarianLarge:
             template = createUtilitarianLarge(timeLeft: defaultTime.description)
@@ -108,11 +108,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         switch complicationFamily {
         case .circularSmall:
-            let template = createCircularSmallTemplate(percent: percent)
+            let template = createCircularSmallTemplate(percent: percent, currentTemperature: currentTempText)
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
         
         case .extraLarge:
-            let template = createExtraLargeTemplate(percent: percent)
+            let template = createExtraLargeTemplate(percent: percent, currentTemperature: currentTempText)
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             
         case .graphicBezel:
@@ -132,7 +132,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             
         case .modularSmall:
-            let template = createModularSmallTemplate(percent: percent)
+            let template = createModularSmallTemplate(percent: percent, currentTemperature: currentTempText)
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             
         case .modularLarge:
@@ -140,7 +140,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
         
         case .utilitarianSmall:
-            let template = createUtilitarianSmallTemplate(percent: percent)
+            let template = createUtilitarianSmallTemplate(percent: percent, currentTemperature: currentTempText)
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
         
         case .utilitarianLarge:
@@ -156,22 +156,21 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Create Complications Template
     
-    func createCircularSmallTemplate(percent: Float) -> CLKComplicationTemplateCircularSmallRingText {
-        let circularSmall = CLKComplicationTemplateCircularSmallRingText()
+    func createCircularSmallTemplate(percent: Float, currentTemperature: String) -> CLKComplicationTemplateCircularSmallStackImage {
+        let circularSmall = CLKComplicationTemplateCircularSmallStackImage()
         
-        circularSmall.fillFraction = percent
-        circularSmall.ringStyle = .closed
-        circularSmall.textProvider = CLKSimpleTextProvider(text: percent.description + "%")
+        circularSmall.line1ImageProvider = CLKImageProvider(onePieceImage: UIImage())
+        circularSmall.line2TextProvider = CLKSimpleTextProvider(text: currentTemperature + "ºC")
         
         return circularSmall
     }
     
-    func createExtraLargeTemplate(percent: Float) -> CLKComplicationTemplateExtraLargeRingText {
-        let extraLarge = CLKComplicationTemplateExtraLargeRingText()
+    func createExtraLargeTemplate(percent: Float, currentTemperature: String) -> CLKComplicationTemplateExtraLargeStackImage {
+        let extraLarge = CLKComplicationTemplateExtraLargeStackImage()
         
-        extraLarge.fillFraction = percent
-        extraLarge.ringStyle = .closed
-        extraLarge.textProvider = CLKSimpleTextProvider(text: percent.description + "%")
+        extraLarge.line1ImageProvider = CLKImageProvider(onePieceImage: UIImage())
+        extraLarge.line2TextProvider = CLKSimpleTextProvider(text: currentTemperature + "ºC")
+        extraLarge.highlightLine2 = true
         
         return extraLarge
     }
@@ -179,7 +178,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func createGraphicBezel(percent: Float, currentTemperature: String, timeLeft: String) -> CLKComplicationTemplateGraphicBezelCircularText {
         let graphicBezel = CLKComplicationTemplateGraphicBezelCircularText()
         
-        graphicBezel.textProvider = CLKSimpleTextProvider(text: timeLeft + " minutos restante")
+        graphicBezel.textProvider = CLKSimpleTextProvider(text: timeLeft + " minutos restantes")
         graphicBezel.circularTemplate = createGraphicCircularTemplate(percent: percent, currentTemperature: currentTemperature)
         return graphicBezel
     }
@@ -223,12 +222,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return graphicRectangular
     }
     
-    func createModularSmallTemplate(percent: Float) -> CLKComplicationTemplateModularSmallRingText {
-        let modularSmall = CLKComplicationTemplateModularSmallRingText()
+    func createModularSmallTemplate(percent: Float, currentTemperature: String) -> CLKComplicationTemplateModularSmallStackImage {
+        let modularSmall = CLKComplicationTemplateModularSmallStackImage()
         
-        modularSmall.fillFraction = percent
-        modularSmall.ringStyle = .closed
-        modularSmall.textProvider = CLKSimpleTextProvider(text: percent.description + "%")
+        modularSmall.line1ImageProvider = CLKImageProvider(onePieceImage: UIImage())
+        modularSmall.line2TextProvider = CLKSimpleTextProvider(text: currentTemperature + "ºC")
+        modularSmall.highlightLine2 = true
         
         return modularSmall
     }
@@ -242,12 +241,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return modularLarge
     }
     
-    func createUtilitarianSmallTemplate(percent: Float) -> CLKComplicationTemplateUtilitarianSmallRingText {
-        let utilitarianSmall = CLKComplicationTemplateUtilitarianSmallRingText()
+    func createUtilitarianSmallTemplate(percent: Float, currentTemperature: String) -> CLKComplicationTemplateUtilitarianSmallFlat {
+        let utilitarianSmall = CLKComplicationTemplateUtilitarianSmallFlat()
         
-        utilitarianSmall.fillFraction = percent
-        utilitarianSmall.ringStyle = .closed
-        utilitarianSmall.textProvider = CLKSimpleTextProvider(text: percent.description + "%")
+        //utilitarianSmall.imageProvider = CLKImageProvider(onePieceImage: <#T##UIImage#>)
+        utilitarianSmall.textProvider = CLKSimpleTextProvider(text: currentTemperature + "ºC")
         
         return utilitarianSmall
     }
@@ -255,7 +253,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func createUtilitarianLarge(timeLeft: String) -> CLKComplicationTemplateUtilitarianLargeFlat {
         let utilitarianLarge = CLKComplicationTemplateUtilitarianLargeFlat()
         
-        utilitarianLarge.textProvider = CLKSimpleTextProvider(text: "Tempo restante " + timeLeft + " minutos")
+        utilitarianLarge.textProvider = CLKSimpleTextProvider(text: "Tempo restante: " + timeLeft + " minutos")
         
         return utilitarianLarge
     }
