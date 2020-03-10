@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct RingShape: Shape {
-    var percent: Double
+    var percent: Float
     
-    var animatableData: Double {
+    var animatableData: Float {
         get { return percent }
         set { percent = newValue }
     }
@@ -20,7 +20,7 @@ struct RingShape: Shape {
         let width = rect.width
         let height = rect.height
         let center = CGPoint(x: width / 2, y: height / 2)
-        let endAngle = Angle(degrees: (percent / 100 * 360) - 90)
+        let endAngle = Angle(degrees: (Double(percent) / 100 * 360) - 90)
         let radius = width / 2
         
         return Path { path in

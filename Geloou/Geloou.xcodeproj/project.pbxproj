@@ -29,6 +29,7 @@
 		AA76B7542411823F000724B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA76B7532411823F000724B9 /* Preview Assets.xcassets */; };
 		AA76B7592411823F000724B9 /* GeloouWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA76B7332411823D000724B9 /* GeloouWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA76B7632411EFD8000724B9 /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B7622411EFD8000724B9 /* RingShape.swift */; };
+		AAF377992416CCF60092E989 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF377982416CCF60092E989 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		AA76B7552411823F000724B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA76B7562411823F000724B9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		AA76B7622411EFD8000724B9 /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
+		AAF377982416CCF60092E989 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				AA76B7552411823F000724B9 /* Info.plist */,
 				AA76B7562411823F000724B9 /* PushNotificationPayload.apns */,
 				AA76B7522411823F000724B9 /* Preview Content */,
+				AAF377982416CCF60092E989 /* Model.swift */,
 			);
 			path = "GeloouWatch Extension";
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				AA0D14222412D506007D071E /* InfoController.swift in Sources */,
 				AA76B7452411823E000724B9 /* RingView.swift in Sources */,
 				AA76B74B2411823E000724B9 /* NotificationController.swift in Sources */,
+				AAF377992416CCF60092E989 /* Model.swift in Sources */,
 				AA76B7632411EFD8000724B9 /* RingShape.swift in Sources */,
 				AA76B7492411823E000724B9 /* ExtensionDelegate.swift in Sources */,
 				AA76B74D2411823E000724B9 /* NotificationView.swift in Sources */,

@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct InfoView: View {
+    @State var currentTemperature: Float = Model.shared.currentTemperature
+    @State var targetTemperature: Float = Model.shared.targetTemperature
+    
     var body: some View {
         List {
             VStack(alignment: .leading) {
@@ -16,7 +19,7 @@ struct InfoView: View {
                     .font(.system(size: 15, weight: .bold, design: .rounded))
                     .lineLimit(1)
                 HStack {
-                    Text("5")
+                    Text(self.currentTemperature.description)
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .foregroundColor(.pink)
                     Text("ºC")
@@ -29,7 +32,7 @@ struct InfoView: View {
                     .font(.system(size: 15, weight: .bold, design: .rounded))
                     .lineLimit(1)
                 HStack {
-                    Text("0")
+                    Text(self.targetTemperature.description)
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .foregroundColor(.blue)
                     Text("ºC")
