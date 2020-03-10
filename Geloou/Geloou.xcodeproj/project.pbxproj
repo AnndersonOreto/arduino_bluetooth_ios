@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C38E34D2418175F00B02DEF /* DrinksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C38E34C2418175F00B02DEF /* DrinksListCell.swift */; };
 		260525222412C96600B9AE0A /* DrinkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260525212412C96600B9AE0A /* DrinkListViewController.swift */; };
 		A767BC242411B71F0081CF66 /* BluetoothScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A767BC232411B71F0081CF66 /* BluetoothScreen.storyboard */; };
 		A767BC262411B8AC0081CF66 /* BluetoothConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767BC252411B8AC0081CF66 /* BluetoothConnectViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C38E34C2418175F00B02DEF /* DrinksListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListCell.swift; sourceTree = "<group>"; };
 		260525212412C96600B9AE0A /* DrinkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListViewController.swift; sourceTree = "<group>"; };
 		A767BC232411B71F0081CF66 /* BluetoothScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BluetoothScreen.storyboard; sourceTree = "<group>"; };
 		A767BC252411B8AC0081CF66 /* BluetoothConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				A79E2B0424117043005860D9 /* ViewController.swift */,
 				A79E2B0624117043005860D9 /* Main.storyboard */,
 				CF79182324168E820021F2A1 /* DrinksList.storyboard */,
+				1C38E34C2418175F00B02DEF /* DrinksListCell.swift */,
 				CF79182524168E940021F2A1 /* DrinksListViewController.swift */,
 				CF7918292416C6DC0021F2A1 /* DrinkTypeViewController.swift */,
 				A79E2B0924117045005860D9 /* Assets.xcassets */,
@@ -252,6 +255,7 @@
 				A767BC262411B8AC0081CF66 /* BluetoothConnectViewController.swift in Sources */,
 				260525222412C96600B9AE0A /* DrinkListViewController.swift in Sources */,
 				A79E2B0524117043005860D9 /* ViewController.swift in Sources */,
+				1C38E34D2418175F00B02DEF /* DrinksListCell.swift in Sources */,
 				ABBE4A022417FE8B009431DA /* ArduinoCommunicator.swift in Sources */,
 				CF79182A2416C6DC0021F2A1 /* DrinkTypeViewController.swift in Sources */,
 				A79E2B0124117043005860D9 /* AppDelegate.swift in Sources */,

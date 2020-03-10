@@ -11,12 +11,13 @@ import UIKit
 class DrinksListViewController: UIViewController {
 
     
-    let drinks: [(String, [String])] =   [("Cerveja", ["Lata","Garrafa","Latão"]),
-                                          ("Vinho", ["Garrafa"])]
+    let drinks: [(String, [String])] =
+        [("Cerveja", ["Lata","Latão","Garrafa"]), ("Vinho", ["Garrafa"])]
     
     var drinkSelected: (String, [String]) = ("", [])
     
     @IBOutlet weak var drinksTableView: UITableView!
+    
     
     
     override func viewDidLoad() {
@@ -43,9 +44,19 @@ extension DrinksListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell")
-        cell?.textLabel?.text = drinks[indexPath.row].0
-        return cell ?? UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell") as? DrinksListCell else { return UITableViewCell()
+        }
+        if indexPath.row == 0 {
+            cell.drinkNameLabel.text = drinks[indexPath.row].0
+            cell.drinkImage.image = UIImage(named: "cerveja")
+        }
+        else if indexPath.row == 1 {
+            cell.drinkNameLabel.text = drinks[indexPath.row].0
+            cell.drinkImage.image = UIImage(named: "vinho")
+        }
+        cell.selectionStyle = .none
+        return cell
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -53,5 +64,11 @@ extension DrinksListViewController: UITableViewDataSource, UITableViewDelegate {
         drinkSelected.1 = drinks[indexPath.row].1
         performSegue(withIdentifier: "selectedDrinkSegue", sender: nil)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
+    }
+    
+    
     
 }
