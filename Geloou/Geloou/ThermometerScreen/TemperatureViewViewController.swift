@@ -14,6 +14,13 @@ class TemperatureViewController: UIViewController {
     @IBOutlet weak var temperatureSlider: UISlider!
     @IBOutlet weak var imageTemperature: UIImageView!
     
+    
+    @IBOutlet weak var gelarButton: UIButton!
+    @IBAction func gelarActionButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     var testLayer = CAShapeLayer()
     var drinkSelected: (String, String) = ("","")
     

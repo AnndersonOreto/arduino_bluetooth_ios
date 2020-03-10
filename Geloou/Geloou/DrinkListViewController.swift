@@ -18,11 +18,28 @@ class DrinkListViewController: UIViewController {
     @IBOutlet weak var idealTemperatureLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
     
+    // MARK: - arduino communicator
+    private var communicator: ArduinoCommunicator!
+//    private var loadingComponent: LoadingComponent!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Drink"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+
+    
+    // MARK: - arduino communicator
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        self.loadingComponent = LoadingComponent()
+        
+        self.communicator = ArduinoCommunicator(delegate: self)
+        
+//        self.loadingComponent.addLoadingIndicator(to: self.view)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,3 +71,19 @@ class DrinkListViewController: UIViewController {
         circularProgressView.widthAnchor.constraint(equalTo: circularView.widthAnchor,multiplier: 1).isActive = true
     }
 }
+
+//MARK: - A EXTENSION TA AQUI IRMAO
+extension DrinkListViewController: ArduinoCommunicatorDelegate {
+    func communicatorDidConnect(_ communicator: ArduinoCommunicator) {
+//        self.loadingComponent.removeLoadingIndicators(from: self.view)
+    }
+    func communicator(_ communicator: ArduinoCommunicator, didRead data: Data) {
+        //print("\n", String(data: data, encoding: .utf8)!)
+        degreesLabel.text = String(data: data, encoding: .utf8)!.split(separator: ".")[0] + "ºC"
+    }
+    func communicator(_ communicator: ArduinoCommunicator, didWrite data: Data) {
+        print(#function)
+        print(String(data: data, encoding: .utf8)!)
+    }
+}
+

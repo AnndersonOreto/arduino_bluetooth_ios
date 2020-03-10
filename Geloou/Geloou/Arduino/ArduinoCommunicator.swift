@@ -74,6 +74,7 @@ class ArduinoCommunicator: NSObject {
             guard let characterist = self.characterist else { return }
             self.peripheral?.readValue(for: characterist)
             print("LEU")
+            
         }
     }
 }
@@ -157,18 +158,3 @@ extension ArduinoCommunicator: CBPeripheralDelegate {
         
     }
 }
-
-
-//MARK: - A EXTENSION TA AQUI IRMAO
-//extension ViewController: ArduinoCommunicatorDelegate {
-//    func communicatorDidConnect(_ communicator: ArduinoCommunicator) {
-//        self.loadingComponent.removeLoadingIndicators(from: self.view)
-//    }
-//    func communicator(_ communicator: ArduinoCommunicator, didRead data: Data) {
-//        print("\n", String(data: data, encoding: .utf8)!)
-//    }
-//    func communicator(_ communicator: ArduinoCommunicator, didWrite data: Data) {
-//        print(#function)
-//        print(String(data: data, encoding: .utf8)!)
-//    }
-//}
