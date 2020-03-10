@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Drinks List View Controller-->
+        <!--Bebidas-->
         <scene sceneID="nNo-vS-vm7">
             <objects>
                 <viewController storyboardIdentifier="DrinksList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TOe-VX-iMF" customClass="DrinksListViewController" customModule="Geloou" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,32 +15,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual bebida você deseja gelar?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wn1-WW-bU6">
-                                <rect key="frame" x="65.5" y="46" width="283.5" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OKx-Yq-VJY">
-                                <rect key="frame" x="0.0" y="116.5" width="414" height="691.5"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="788"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="drinkCell" textLabel="vIo-Kq-912" style="IBUITableViewCellStyleDefault" id="Ibb-DZ-q75">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drinkCell" rowHeight="121" id="ktq-0N-DnG" customClass="DrinksListCell" customModule="Geloou" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ibb-DZ-q75" id="oYy-pg-7Rg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ktq-0N-DnG" id="EFd-bl-hgZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vIo-Kq-912">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cerveja" translatesAutoresizingMaskIntoConstraints="NO" id="Iqb-lb-Tf7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ao3-c7-ZgO">
+                                                    <rect key="frame" x="0.0" y="101" width="414" height="20"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="nQ8-ej-MXT"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cerveja" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXz-0V-Oug">
+                                                    <rect key="frame" x="136.5" y="24" width="141" height="45.5"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="37"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Ao3-c7-ZgO" secondAttribute="bottom" id="6ln-OC-i9u"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ao3-c7-ZgO" secondAttribute="trailing" id="7tV-rD-LWr"/>
+                                                <constraint firstItem="Iqb-lb-Tf7" firstAttribute="leading" secondItem="Ao3-c7-ZgO" secondAttribute="leading" id="A9I-2j-49M"/>
+                                                <constraint firstItem="Ao3-c7-ZgO" firstAttribute="leading" secondItem="EFd-bl-hgZ" secondAttribute="leading" id="LOT-fC-fo7"/>
+                                                <constraint firstItem="Iqb-lb-Tf7" firstAttribute="centerY" secondItem="LXz-0V-Oug" secondAttribute="centerY" id="P9J-lh-1zg"/>
+                                                <constraint firstItem="Iqb-lb-Tf7" firstAttribute="top" secondItem="EFd-bl-hgZ" secondAttribute="topMargin" constant="-11" id="awi-lO-lI8"/>
+                                                <constraint firstItem="Iqb-lb-Tf7" firstAttribute="trailing" secondItem="Ao3-c7-ZgO" secondAttribute="trailing" id="bOe-vu-yOt"/>
+                                                <constraint firstItem="Ao3-c7-ZgO" firstAttribute="top" secondItem="Iqb-lb-Tf7" secondAttribute="bottom" constant="8" id="mTb-7V-CRP"/>
+                                                <constraint firstItem="Iqb-lb-Tf7" firstAttribute="centerX" secondItem="LXz-0V-Oug" secondAttribute="centerX" id="rAz-b2-nqc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="drinkImage" destination="Iqb-lb-Tf7" id="Q12-Ur-XBU"/>
+                                            <outlet property="drinkNameLabel" destination="LXz-0V-Oug" id="Qz8-e1-cbV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -48,15 +66,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="3Uz-Rb-fVf" firstAttribute="trailing" secondItem="OKx-Yq-VJY" secondAttribute="trailing" id="44L-bO-CJi"/>
-                            <constraint firstItem="wn1-WW-bU6" firstAttribute="centerX" secondItem="QyO-ZM-UXg" secondAttribute="centerX" id="8dJ-ny-p31"/>
-                            <constraint firstItem="wn1-WW-bU6" firstAttribute="top" secondItem="3Uz-Rb-fVf" secondAttribute="top" constant="46" id="CUx-bX-ACL"/>
-                            <constraint firstItem="OKx-Yq-VJY" firstAttribute="top" secondItem="wn1-WW-bU6" secondAttribute="bottom" constant="45" id="FKO-QH-9FN"/>
                             <constraint firstAttribute="bottom" secondItem="OKx-Yq-VJY" secondAttribute="bottom" id="Mo9-Xw-QW6"/>
+                            <constraint firstItem="OKx-Yq-VJY" firstAttribute="top" secondItem="3Uz-Rb-fVf" secondAttribute="top" constant="20" id="O5y-eT-ev6"/>
                             <constraint firstItem="OKx-Yq-VJY" firstAttribute="leading" secondItem="3Uz-Rb-fVf" secondAttribute="leading" id="hN4-tV-EsY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Uz-Rb-fVf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fa5-Yw-ybB"/>
+                    <navigationItem key="navigationItem" title="Bebidas" id="fa5-Yw-ybB"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="drinksTableView" destination="OKx-Yq-VJY" id="DQq-4o-TQq"/>
@@ -160,4 +176,7 @@
             <point key="canvasLocation" x="1951" y="-44"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cerveja" width="480" height="325"/>
+    </resources>
 </document>
