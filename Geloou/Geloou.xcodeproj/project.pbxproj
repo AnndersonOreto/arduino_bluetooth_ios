@@ -25,6 +25,22 @@
 		CF79182424168E820021F2A1 /* DrinksList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF79182324168E820021F2A1 /* DrinksList.storyboard */; };
 		CF79182624168E940021F2A1 /* DrinksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79182524168E940021F2A1 /* DrinksListViewController.swift */; };
 		CF79182A2416C6DC0021F2A1 /* DrinkTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7918292416C6DC0021F2A1 /* DrinkTypeViewController.swift */; };
+		AA0D14202412CF7B007D071E /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0D141F2412CF7B007D071E /* InfoView.swift */; };
+		AA0D14222412D506007D071E /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0D14212412D506007D071E /* InfoController.swift */; };
+		AA76B7372411823D000724B9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA76B7352411823D000724B9 /* Interface.storyboard */; };
+		AA76B7392411823E000724B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA76B7382411823E000724B9 /* Assets.xcassets */; };
+		AA76B7402411823E000724B9 /* GeloouWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA76B73F2411823E000724B9 /* GeloouWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA76B7452411823E000724B9 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B7442411823E000724B9 /* RingView.swift */; };
+		AA76B7472411823E000724B9 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B7462411823E000724B9 /* HostingController.swift */; };
+		AA76B7492411823E000724B9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B7482411823E000724B9 /* ExtensionDelegate.swift */; };
+		AA76B74B2411823E000724B9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B74A2411823E000724B9 /* NotificationController.swift */; };
+		AA76B74D2411823E000724B9 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B74C2411823E000724B9 /* NotificationView.swift */; };
+		AA76B74F2411823E000724B9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B74E2411823E000724B9 /* ComplicationController.swift */; };
+		AA76B7512411823F000724B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA76B7502411823F000724B9 /* Assets.xcassets */; };
+		AA76B7542411823F000724B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA76B7532411823F000724B9 /* Preview Assets.xcassets */; };
+		AA76B7592411823F000724B9 /* GeloouWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA76B7332411823D000724B9 /* GeloouWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA76B7632411EFD8000724B9 /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B7622411EFD8000724B9 /* RingShape.swift */; };
+		AAF377992416CCF60092E989 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF377982416CCF60092E989 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +51,46 @@
 			remoteGlobalIDString = A79E2AFC24117043005860D9;
 			remoteInfo = Geloou;
 		};
+		AA76B7412411823E000724B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79E2AF524117043005860D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA76B73E2411823E000724B9;
+			remoteInfo = "GeloouWatch Extension";
+		};
+		AA76B7572411823F000724B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79E2AF524117043005860D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA76B7322411823D000724B9;
+			remoteInfo = GeloouWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA76B75D2411823F000724B9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AA76B7402411823E000724B9 /* GeloouWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA76B7612411823F000724B9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				AA76B7592411823F000724B9 /* GeloouWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C38E34C2418175F00B02DEF /* DrinksListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListCell.swift; sourceTree = "<group>"; };
@@ -60,6 +115,25 @@
 		CF79182324168E820021F2A1 /* DrinksList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrinksList.storyboard; sourceTree = "<group>"; };
 		CF79182524168E940021F2A1 /* DrinksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListViewController.swift; sourceTree = "<group>"; };
 		CF7918292416C6DC0021F2A1 /* DrinkTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTypeViewController.swift; sourceTree = "<group>"; };
+		AA0D141F2412CF7B007D071E /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		AA0D14212412D506007D071E /* InfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
+		AA76B7332411823D000724B9 /* GeloouWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeloouWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA76B7362411823D000724B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		AA76B7382411823E000724B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA76B73A2411823E000724B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA76B73F2411823E000724B9 /* GeloouWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GeloouWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA76B7442411823E000724B9 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		AA76B7462411823E000724B9 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		AA76B7482411823E000724B9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		AA76B74A2411823E000724B9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		AA76B74C2411823E000724B9 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		AA76B74E2411823E000724B9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		AA76B7502411823F000724B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA76B7532411823F000724B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA76B7552411823F000724B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA76B7562411823F000724B9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		AA76B7622411EFD8000724B9 /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
+		AAF377982416CCF60092E989 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +151,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA76B73C2411823E000724B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +166,8 @@
 			children = (
 				A79E2AFF24117043005860D9 /* Geloou */,
 				A79E2B1624117046005860D9 /* GeloouTests */,
+				AA76B7342411823D000724B9 /* GeloouWatch */,
+				AA76B7432411823E000724B9 /* GeloouWatch Extension */,
 				A79E2AFE24117043005860D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +177,8 @@
 			children = (
 				A79E2AFD24117043005860D9 /* Geloou.app */,
 				A79E2B1324117046005860D9 /* GeloouTests.xctest */,
+				AA76B7332411823D000724B9 /* GeloouWatch.app */,
+				AA76B73F2411823E000724B9 /* GeloouWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +233,45 @@
 			path = Arduino;
 			sourceTree = "<group>";
 		};
+		AA76B7342411823D000724B9 /* GeloouWatch */ = {
+			isa = PBXGroup;
+			children = (
+				AA76B7352411823D000724B9 /* Interface.storyboard */,
+				AA76B7382411823E000724B9 /* Assets.xcassets */,
+				AA76B73A2411823E000724B9 /* Info.plist */,
+			);
+			path = GeloouWatch;
+			sourceTree = "<group>";
+		};
+		AA76B7432411823E000724B9 /* GeloouWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AA76B7442411823E000724B9 /* RingView.swift */,
+				AA76B7622411EFD8000724B9 /* RingShape.swift */,
+				AA76B7462411823E000724B9 /* HostingController.swift */,
+				AA0D141F2412CF7B007D071E /* InfoView.swift */,
+				AA0D14212412D506007D071E /* InfoController.swift */,
+				AA76B7482411823E000724B9 /* ExtensionDelegate.swift */,
+				AA76B74A2411823E000724B9 /* NotificationController.swift */,
+				AA76B74C2411823E000724B9 /* NotificationView.swift */,
+				AA76B74E2411823E000724B9 /* ComplicationController.swift */,
+				AA76B7502411823F000724B9 /* Assets.xcassets */,
+				AA76B7552411823F000724B9 /* Info.plist */,
+				AA76B7562411823F000724B9 /* PushNotificationPayload.apns */,
+				AA76B7522411823F000724B9 /* Preview Content */,
+				AAF377982416CCF60092E989 /* Model.swift */,
+			);
+			path = "GeloouWatch Extension";
+			sourceTree = "<group>";
+		};
+		AA76B7522411823F000724B9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AA76B7532411823F000724B9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,10 +282,12 @@
 				A79E2AF924117043005860D9 /* Sources */,
 				A79E2AFA24117043005860D9 /* Frameworks */,
 				A79E2AFB24117043005860D9 /* Resources */,
+				AA76B7612411823F000724B9 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AA76B7582411823F000724B9 /* PBXTargetDependency */,
 			);
 			name = Geloou;
 			productName = Geloou;
@@ -186,13 +312,47 @@
 			productReference = A79E2B1324117046005860D9 /* GeloouTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AA76B7322411823D000724B9 /* GeloouWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA76B75E2411823F000724B9 /* Build configuration list for PBXNativeTarget "GeloouWatch" */;
+			buildPhases = (
+				AA76B7312411823D000724B9 /* Resources */,
+				AA76B75D2411823F000724B9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA76B7422411823E000724B9 /* PBXTargetDependency */,
+			);
+			name = GeloouWatch;
+			productName = GeloouWatch;
+			productReference = AA76B7332411823D000724B9 /* GeloouWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		AA76B73E2411823E000724B9 /* GeloouWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA76B75A2411823F000724B9 /* Build configuration list for PBXNativeTarget "GeloouWatch Extension" */;
+			buildPhases = (
+				AA76B73B2411823E000724B9 /* Sources */,
+				AA76B73C2411823E000724B9 /* Frameworks */,
+				AA76B73D2411823E000724B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GeloouWatch Extension";
+			productName = "GeloouWatch Extension";
+			productReference = AA76B73F2411823E000724B9 /* GeloouWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A79E2AF524117043005860D9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = Academy;
 				TargetAttributes = {
@@ -202,6 +362,12 @@
 					A79E2B1224117046005860D9 = {
 						CreatedOnToolsVersion = 11.2.1;
 						TestTargetID = A79E2AFC24117043005860D9;
+					};
+					AA76B7322411823D000724B9 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					AA76B73E2411823E000724B9 = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -220,6 +386,8 @@
 			targets = (
 				A79E2AFC24117043005860D9 /* Geloou */,
 				A79E2B1224117046005860D9 /* GeloouTests */,
+				AA76B7322411823D000724B9 /* GeloouWatch */,
+				AA76B73E2411823E000724B9 /* GeloouWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -242,6 +410,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA76B7312411823D000724B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA76B7392411823E000724B9 /* Assets.xcassets in Resources */,
+				AA76B7372411823D000724B9 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA76B73D2411823E000724B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA76B7542411823F000724B9 /* Preview Assets.xcassets in Resources */,
+				AA76B7512411823F000724B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +460,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA76B73B2411823E000724B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0D14202412CF7B007D071E /* InfoView.swift in Sources */,
+				AA76B7472411823E000724B9 /* HostingController.swift in Sources */,
+				AA0D14222412D506007D071E /* InfoController.swift in Sources */,
+				AA76B7452411823E000724B9 /* RingView.swift in Sources */,
+				AA76B74B2411823E000724B9 /* NotificationController.swift in Sources */,
+				AAF377992416CCF60092E989 /* Model.swift in Sources */,
+				AA76B7632411EFD8000724B9 /* RingShape.swift in Sources */,
+				AA76B7492411823E000724B9 /* ExtensionDelegate.swift in Sources */,
+				AA76B74D2411823E000724B9 /* NotificationView.swift in Sources */,
+				AA76B74F2411823E000724B9 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -281,6 +484,16 @@
 			isa = PBXTargetDependency;
 			target = A79E2AFC24117043005860D9 /* Geloou */;
 			targetProxy = A79E2B1424117046005860D9 /* PBXContainerItemProxy */;
+		};
+		AA76B7422411823E000724B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA76B73E2411823E000724B9 /* GeloouWatch Extension */;
+			targetProxy = AA76B7412411823E000724B9 /* PBXContainerItemProxy */;
+		};
+		AA76B7582411823F000724B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA76B7322411823D000724B9 /* GeloouWatch */;
+			targetProxy = AA76B7572411823F000724B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -299,6 +512,14 @@
 				A79E2B0C24117045005860D9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AA76B7352411823D000724B9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA76B7362411823D000724B9 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -498,6 +719,92 @@
 			};
 			name = Release;
 		};
+		AA76B75B2411823F000724B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GeloouWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = V4HVD5P383;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "GeloouWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = academy.Geloou.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		AA76B75C2411823F000724B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GeloouWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = V4HVD5P383;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "GeloouWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = academy.Geloou.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		AA76B75F2411823F000724B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4HVD5P383;
+				IBSC_MODULE = GeloouWatch_Extension;
+				INFOPLIST_FILE = GeloouWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = academy.Geloou.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		AA76B7602411823F000724B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4HVD5P383;
+				IBSC_MODULE = GeloouWatch_Extension;
+				INFOPLIST_FILE = GeloouWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = academy.Geloou.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -524,6 +831,24 @@
 			buildConfigurations = (
 				A79E2B2024117046005860D9 /* Debug */,
 				A79E2B2124117046005860D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA76B75A2411823F000724B9 /* Build configuration list for PBXNativeTarget "GeloouWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA76B75B2411823F000724B9 /* Debug */,
+				AA76B75C2411823F000724B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA76B75E2411823F000724B9 /* Build configuration list for PBXNativeTarget "GeloouWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA76B75F2411823F000724B9 /* Debug */,
+				AA76B7602411823F000724B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
