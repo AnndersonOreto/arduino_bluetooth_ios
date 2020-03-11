@@ -19,6 +19,7 @@ class DrinkListViewController: UIViewController {
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var estimatedLabel: UILabel!
     @IBOutlet weak var estimatedTimeLabel: UILabel!
+    var temperatureArray: [Double] = []
     
     // MARK: - arduino communicator
     private var communicator: ArduinoCommunicator!
@@ -30,8 +31,6 @@ class DrinkListViewController: UIViewController {
         super.viewDidLoad()
             
         is_cooling = UserDefaults.standard.bool(forKey: "gelou-state")
-        
-        updateState(temperature: "")
         
         self.title = "Drink"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -86,10 +85,10 @@ class DrinkListViewController: UIViewController {
         if is_cooling {
             confirmButton.setTitle("Retirei", for: .normal)
             degreesLabel.text = temperature
-            drinkTypeLabel.text = "sem drink"
-            estimatedLabel.text = "gele uma nova"
-            estimatedTimeLabel.text = "-"
-            idealTemperatureLabel.text = "sem temperatura ideal"
+            drinkTypeLabel.text = "Cerveja lata"
+            estimatedLabel.text = "estimado"
+            estimatedTimeLabel.text = estimatedTime()
+            idealTemperatureLabel.text = "ideal 5ºC"
         } else {
             degreesLabel.text = "bebida"
             confirmButton.setTitle("Gelar", for: .normal)
@@ -98,6 +97,27 @@ class DrinkListViewController: UIViewController {
             estimatedTimeLabel.text = "-"
             idealTemperatureLabel.text = "sem temperatura ideal"
         }
+    }
+    
+    func estimatedTime() -> String {
+        
+        if temperatureArray.count >= 5 {
+            
+            var resp: Double = 0.0
+            let temperatureSize: Double = Double(temperatureArray.count)
+            
+            for i in 1..<temperatureArray.count {
+                resp += (temperatureArray[i] - temperatureArray[i-1])
+            }
+            
+            resp = resp / temperatureSize
+            resp = resp / 10
+            let temperature : Double = UserDefaults.standard.double(forKey: "gelou-temperature")
+            resp = (temperatureArray[temperatureArray.count-1] - temperature) / resp
+            
+            return "\(resp)"
+        }
+        return ""
     }
     
     fileprivate func setCircularProgressConstraints() {
@@ -117,6 +137,9 @@ extension DrinkListViewController: ArduinoCommunicatorDelegate {
     func communicator(_ communicator: ArduinoCommunicator, didRead data: Data) {
         //print("\n", String(data: data, encoding: .utf8)!)
         updateState(temperature: String(data: data, encoding: .utf8)!.split(separator: ".")[0] + "ºC")
+        if temperatureArray.count < 5 {
+            temperatureArray.append(Double(String(data: data, encoding: .utf8) ?? "0.0") ?? 0.0)
+        }
     }
     func communicator(_ communicator: ArduinoCommunicator, didWrite data: Data) {
         print(#function)
