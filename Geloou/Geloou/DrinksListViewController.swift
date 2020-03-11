@@ -12,7 +12,7 @@ class DrinksListViewController: UIViewController {
 
     
     let drinks: [(String, [String])] =
-        [("Cerveja", ["Lata","Latão","Garrafa"]), ("Vinho", ["Garrafa"])]
+        [("Cerveja", ["Lata","Latão","Garrafa"])]
     
     var drinkSelected: (String, [String]) = ("", [])
     
@@ -48,12 +48,12 @@ extension DrinksListViewController: UITableViewDataSource, UITableViewDelegate {
         }
         if indexPath.row == 0 {
             cell.drinkNameLabel.text = drinks[indexPath.row].0
-            cell.drinkImage.image = UIImage(named: "cerveja")
+            cell.drinkImage.image = UIImage(named: "cerveja_normal")
         }
-        else if indexPath.row == 1 {
-            cell.drinkNameLabel.text = drinks[indexPath.row].0
-            cell.drinkImage.image = UIImage(named: "vinho")
-        }
+//        else if indexPath.row == 1 {
+//            cell.drinkNameLabel.text = drinks[indexPath.row].0
+//            cell.drinkImage.image = UIImage(named: "vinho")
+//        }
         cell.selectionStyle = .none
         return cell
 
@@ -65,9 +65,9 @@ extension DrinksListViewController: UITableViewDataSource, UITableViewDelegate {
         performSegue(withIdentifier: "selectedDrinkSegue", sender: nil)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 130
+//    }
     
     
     

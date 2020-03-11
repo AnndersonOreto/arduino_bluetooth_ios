@@ -46,21 +46,6 @@
                                     <constraint firstAttribute="width" constant="100" id="fCK-bV-ElY"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOa-VO-7Ne">
-                                <rect key="frame" x="32" y="812" width="350" height="50"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="t3F-Bn-dS3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                <state key="normal" title="Gelar">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="confirmationAction:" destination="EiV-6B-EP3" eventType="touchUpInside" id="aDS-JF-KQl"/>
-                                    <segue destination="yjv-zV-2zh" kind="show" id="Xor-KH-5dQ"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTV-d5-GJl">
                                 <rect key="frame" x="89.5" y="194" width="235" height="235"/>
                                 <subviews>
@@ -127,16 +112,37 @@
                                 <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwf-ex-wu2">
+                                <rect key="frame" x="32" y="805" width="350" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="VuN-7A-PA5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ew3-QM-bVp"/>
+                                    <constraint firstAttribute="height" constant="50" id="f7L-fm-APc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="26"/>
+                                <state key="normal" title="Gelar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="yjv-zV-2zh" kind="show" id="Xhe-tY-da5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="m3a-29-4ke" firstAttribute="centerX" secondItem="mTV-d5-GJl" secondAttribute="centerX" id="2ph-iS-x45"/>
                             <constraint firstItem="LMz-G9-POq" firstAttribute="top" secondItem="mTV-d5-GJl" secondAttribute="bottom" constant="8" id="2qt-X5-PaU"/>
-                            <constraint firstItem="tOa-VO-7Ne" firstAttribute="leading" secondItem="PZq-vF-Ec7" secondAttribute="leading" constant="32" id="4ci-ye-HfM"/>
                             <constraint firstItem="SCg-Xy-nMF" firstAttribute="centerX" secondItem="Z9M-GH-YtV" secondAttribute="centerX" id="4tC-BD-FAp"/>
-                            <constraint firstItem="tOa-VO-7Ne" firstAttribute="bottom" secondItem="PZq-vF-Ec7" secondAttribute="bottom" id="7da-Ww-R8E"/>
+                            <constraint firstItem="PZq-vF-Ec7" firstAttribute="bottom" secondItem="xwf-ex-wu2" secondAttribute="bottom" constant="7" id="AA8-N4-Ic5"/>
                             <constraint firstItem="m3a-29-4ke" firstAttribute="top" secondItem="aSf-By-fVl" secondAttribute="bottom" constant="16" id="Cs4-Li-5jD"/>
                             <constraint firstItem="mTV-d5-GJl" firstAttribute="centerX" secondItem="Z9M-GH-YtV" secondAttribute="centerX" id="FnF-oB-zqn"/>
+                            <constraint firstItem="PZq-vF-Ec7" firstAttribute="trailing" secondItem="xwf-ex-wu2" secondAttribute="trailing" constant="32" id="HbW-PO-PZ6"/>
                             <constraint firstItem="LMz-G9-POq" firstAttribute="centerX" secondItem="Z9M-GH-YtV" secondAttribute="centerX" id="MY3-HK-E0k"/>
                             <constraint firstItem="SCg-Xy-nMF" firstAttribute="top" secondItem="LMz-G9-POq" secondAttribute="bottom" constant="8" id="Mwq-Ci-qte"/>
                             <constraint firstItem="PZq-vF-Ec7" firstAttribute="trailing" secondItem="aSf-By-fVl" secondAttribute="trailing" constant="26" id="U2O-K3-lQG"/>
@@ -144,7 +150,7 @@
                             <constraint firstItem="m3a-29-4ke" firstAttribute="centerX" secondItem="Z9M-GH-YtV" secondAttribute="centerX" id="fga-eQ-XnI"/>
                             <constraint firstItem="LMz-G9-POq" firstAttribute="centerY" secondItem="Z9M-GH-YtV" secondAttribute="centerY" id="izo-C9-sGv"/>
                             <constraint firstItem="SCg-Xy-nMF" firstAttribute="top" secondItem="Z9M-GH-YtV" secondAttribute="top" constant="467" id="m4X-o3-1ZR"/>
-                            <constraint firstItem="PZq-vF-Ec7" firstAttribute="trailing" secondItem="tOa-VO-7Ne" secondAttribute="trailing" constant="32" id="otz-s9-ppZ"/>
+                            <constraint firstItem="xwf-ex-wu2" firstAttribute="leading" secondItem="PZq-vF-Ec7" secondAttribute="leading" constant="32" id="oaY-EJ-OTZ"/>
                             <constraint firstItem="aSf-By-fVl" firstAttribute="leading" secondItem="PZq-vF-Ec7" secondAttribute="leading" constant="26" id="qNZ-fx-uQu"/>
                             <constraint firstItem="m3a-29-4ke" firstAttribute="top" secondItem="Z9M-GH-YtV" secondAttribute="top" constant="580" id="t5d-gx-I7J"/>
                             <constraint firstItem="SCg-Xy-nMF" firstAttribute="centerX" secondItem="mTV-d5-GJl" secondAttribute="centerX" id="zKO-za-m49"/>
@@ -154,7 +160,7 @@
                     <navigationItem key="navigationItem" id="n3u-Bp-YFt"/>
                     <connections>
                         <outlet property="circularView" destination="mTV-d5-GJl" id="LPa-PT-Bq6"/>
-                        <outlet property="confirmButton" destination="tOa-VO-7Ne" id="8dd-18-fgl"/>
+                        <outlet property="confirmButton" destination="xwf-ex-wu2" id="vVg-8U-CcU"/>
                         <outlet property="degreesLabel" destination="aSf-By-fVl" id="xev-Eo-DNR"/>
                         <outlet property="drinkTypeLabel" destination="80H-Zw-VH4" id="c2u-R9-Eqi"/>
                         <outlet property="idealTemperatureLabel" destination="3vZ-Rq-5p5" id="wml-g6-E1j"/>

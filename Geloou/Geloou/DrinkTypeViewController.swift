@@ -13,9 +13,10 @@ class DrinkTypeViewController: UIViewController {
     var drinkSelectedAndAmount: (String, [String]) = ("",[])
     var drinkSelected: (String, String) = ("", "")
     
+    var drinksArray = ["Lata", "Garrafa"]
+    
     
     @IBOutlet weak var drinkTypeTableview: UITableView!
-    @IBOutlet weak var descriptionLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -23,7 +24,7 @@ class DrinkTypeViewController: UIViewController {
         
         drinkTypeTableview.dataSource = self
         drinkTypeTableview.delegate = self
-        descriptionLabel.text = "Qual o tipo de \(drinkSelectedAndAmount.0.lowercased()) você deseja gelar?"
+//        descriptionLabel.text = "Qual o tipo de \(drinkSelectedAndAmount.0.lowercased()) você deseja gelar?"
     }
     
     
@@ -40,13 +41,30 @@ class DrinkTypeViewController: UIViewController {
 extension DrinkTypeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return drinkSelectedAndAmount.1.count
+        return drinksArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "drinkTypeCell")
-        cell?.textLabel?.text = drinkSelectedAndAmount.1[indexPath.row]
-        return cell ?? UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell") as? DrinksListCell else { return UITableViewCell()
+        }
+//        cell?.textLabel?.text = drinkSelectedAndAmount.1[indexPath.row]
+        
+        
+        if indexPath.row == 0 {
+            cell.drinkNameLabel.text = drinksArray[0]
+            cell.drinkImage.image = UIImage(named: "cerveja_lata")
+//            cell.backgroundColor = UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1)
+            cell.backgroundColor = UIColor(red: 255/255, green: 166/255, blue: 0/255, alpha: 0.7)
+
+        } else if indexPath.row == 1 {
+            cell.drinkNameLabel.text = drinksArray[1]
+            cell.drinkImage.image = UIImage(named: "cerveja_garrafa")
+            cell.backgroundColor = UIColor(red: 255/255, green: 166/255, blue: 0/255, alpha: 0.9)
+
+        }
+        
+        cell.selectionStyle = .none
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -54,5 +72,6 @@ extension DrinkTypeViewController: UITableViewDataSource, UITableViewDelegate {
         performSegue(withIdentifier: "temperatureSegue", sender: nil)
     }
     
+    // FDE08D cor do background
     
 }
