@@ -10,8 +10,6 @@ import SwiftUI
 
 struct InfoView: View {
     @ObservedObject var model = Model.shared
-    //@State var currentTemperature: Float = Model.shared.currentTemperature
-    //@State var targetTemperature: Float = Model.shared.targetTemperature
     
     var body: some View {
         List {

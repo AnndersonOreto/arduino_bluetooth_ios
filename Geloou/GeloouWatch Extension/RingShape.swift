@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RingShape: Shape {
-    var percent: Float
+    @State var percent: Float
     
     var animatableData: Float {
         get { return percent }

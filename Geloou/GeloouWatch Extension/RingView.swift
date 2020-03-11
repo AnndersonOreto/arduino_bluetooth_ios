@@ -10,8 +10,6 @@ import SwiftUI
 
 struct RingView: View {
     @ObservedObject var model = Model.shared
-    @State var percent: Float = Model.shared.percent
-    @State var timeLeft: Int = Model.shared.timeLeft
     private let thickness: CGFloat = 25
     private let fontSize: CGFloat = 13
     private let gradientColors = [Color.blue, Color.white]
@@ -43,6 +41,6 @@ struct RingView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        RingView(percent: 80, timeLeft: 8)
+        RingView()
     }
 }

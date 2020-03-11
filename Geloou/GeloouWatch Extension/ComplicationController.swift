@@ -11,6 +11,11 @@ import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
+    // MARK: - Variables
+    
+    let redColor = UIColor(red: 216/255, green: 0/255, blue: 39/255, alpha: 1)
+    let blueColor = UIColor(red: 117/255, green: 174/255, blue: 220/255, alpha: 1)
+    
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
@@ -74,19 +79,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template = createGraphicCornerTemplate(percent: defaultPercent, currentTemperature: defaultCurrentTemp, targetTemperature: defaultTargetTemp)
         
         case .graphicRectangular:
-            template = createGraphicRectangularTemplate(percent: defaultPercent, timeLeft: defaultTime.description)
+            template = createGraphicRectangularTemplate(percent: defaultPercent, currentTemperature: defaultCurrentTemp)
             
         case .modularSmall:
             template = createModularSmallTemplate(percent: defaultPercent, currentTemperature: defaultCurrentTemp)
             
         case .modularLarge:
-            template = createModularLargeTemplate(timeLeft: defaultTime.description)
+            template = createModularLargeTemplate(currentTemperature: defaultCurrentTemp, targetTemperature: defaultTargetTemp)
             
         case .utilitarianSmall:
             template = createUtilitarianSmallTemplate(percent: defaultPercent, currentTemperature: defaultCurrentTemp)
             
         case .utilitarianLarge:
-            template = createUtilitarianLarge(timeLeft: defaultTime.description)
+            template = createUtilitarianLarge(currentTemperature: defaultCurrentTemp)
             
         default:
             template = nil
@@ -128,7 +133,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
         
         case .graphicRectangular:
-            let template = createGraphicRectangularTemplate(percent: percent, timeLeft: timeLeft.description)
+            let template = createGraphicRectangularTemplate(percent: percent, currentTemperature: currentTempText)
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             
         case .modularSmall:
@@ -136,7 +141,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             
         case .modularLarge:
-            let template = createModularLargeTemplate(timeLeft: timeLeft.description)
+            let template = createModularLargeTemplate(currentTemperature: currentTempText, targetTemperature: targetTempText)
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
         
         case .utilitarianSmall:
@@ -144,7 +149,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
         
         case .utilitarianLarge:
-            let template = createUtilitarianLarge(timeLeft: timeLeft.description)
+            let template = createUtilitarianLarge(currentTemperature: currentTempText)
             entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             
         default:
@@ -186,9 +191,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func createGraphicCircularTemplate(percent: Float, currentTemperature: String) -> CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText {
         let graphicCircular = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
         
-        let redColor = UIColor(red: 216/255, green: 0/255, blue: 39/255, alpha: 1)
-        let blueColor = UIColor(red: 117/255, green: 174/255, blue: 220/255, alpha: 1)
-        
         graphicCircular.bottomTextProvider = CLKSimpleTextProvider(text: "ºC")
         graphicCircular.centerTextProvider = CLKSimpleTextProvider(text: currentTemperature)
         graphicCircular.gaugeProvider = CLKSimpleGaugeProvider(style: .ring, gaugeColors: [redColor, .white, blueColor], gaugeColorLocations: [0, 0.5, 0.9], fillFraction: percent/100)
@@ -199,9 +201,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func createGraphicCornerTemplate(percent: Float, currentTemperature: String, targetTemperature: String) -> CLKComplicationTemplateGraphicCornerGaugeText {
         let graphicCorner = CLKComplicationTemplateGraphicCornerGaugeText()
         
-        let redColor = UIColor(red: 216/255, green: 0/255, blue: 39/255, alpha: 1)
-        let blueColor = UIColor(red: 117/255, green: 174/255, blue: 220/255, alpha: 1)
-        
         graphicCorner.gaugeProvider = CLKSimpleGaugeProvider(style: .ring, gaugeColors: [redColor, .white, blueColor], gaugeColorLocations: [0, 0.5, 0.9], fillFraction: percent/100)
         //graphicCorner.trailingTextProvider = CLKSimpleTextProvider(text: targetTemperature.description)
         graphicCorner.outerTextProvider = CLKSimpleTextProvider(text: currentTemperature + "ºC")
@@ -209,15 +208,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return graphicCorner
     }
     
-    func createGraphicRectangularTemplate(percent: Float, timeLeft: String) -> CLKComplicationTemplateGraphicRectangularTextGauge {
+    func createGraphicRectangularTemplate(percent: Float, currentTemperature: String) -> CLKComplicationTemplateGraphicRectangularTextGauge {
         let graphicRectangular = CLKComplicationTemplateGraphicRectangularTextGauge()
         
-        let redColor = UIColor(red: 216/255, green: 0/255, blue: 39/255, alpha: 1)
-        let blueColor = UIColor(red: 117/255, green: 174/255, blue: 220/255, alpha: 1)
-        
         graphicRectangular.gaugeProvider = CLKSimpleGaugeProvider(style: .ring, gaugeColors: [redColor, .white, blueColor], gaugeColorLocations: [0, 0.5, 0.9], fillFraction: percent/100)
-        graphicRectangular.headerTextProvider = CLKSimpleTextProvider(text: "Tempo restante")
-        graphicRectangular.body1TextProvider = CLKSimpleTextProvider(text: timeLeft + " minutos")
+        graphicRectangular.headerTextProvider = CLKSimpleTextProvider(text: "Temperatura")
+        graphicRectangular.body1TextProvider = CLKSimpleTextProvider(text: currentTemperature + "ºC")
+        //graphicRectangular.headerImageProvider = CLKImageProvider(onePieceImage: <#T##UIImage#>)
         
         return graphicRectangular
     }
@@ -232,11 +229,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return modularSmall
     }
     
-    func createModularLargeTemplate(timeLeft: String) -> CLKComplicationTemplateModularLargeTallBody {
-        let modularLarge = CLKComplicationTemplateModularLargeTallBody()
+    func createModularLargeTemplate(currentTemperature: String, targetTemperature: String) -> CLKComplicationTemplateModularLargeTable {
+        let modularLarge = CLKComplicationTemplateModularLargeTable()
         
-        modularLarge.headerTextProvider = CLKSimpleTextProvider(text: "Tempo restante")
-        modularLarge.bodyTextProvider = CLKSimpleTextProvider(text: timeLeft + " minutos")
+        //modularLarge.headerImageProvider = CLKImageProvider(onePieceImage: <#T##UIImage#>)
+        modularLarge.headerTextProvider = CLKSimpleTextProvider(text: "Temperatura")
+        modularLarge.row1Column1TextProvider = CLKSimpleTextProvider(text: currentTemperature + "ºC")
+        modularLarge.row1Column2TextProvider = CLKSimpleTextProvider(text: "Atual")
+        modularLarge.row2Column1TextProvider = CLKSimpleTextProvider(text: targetTemperature + "ºC")
+        modularLarge.row2Column2TextProvider = CLKSimpleTextProvider(text: "Ideal")
+        modularLarge.column2Alignment = .leading
         
         return modularLarge
     }
@@ -250,10 +252,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return utilitarianSmall
     }
     
-    func createUtilitarianLarge(timeLeft: String) -> CLKComplicationTemplateUtilitarianLargeFlat {
+    func createUtilitarianLarge(currentTemperature: String) -> CLKComplicationTemplateUtilitarianLargeFlat {
         let utilitarianLarge = CLKComplicationTemplateUtilitarianLargeFlat()
         
-        utilitarianLarge.textProvider = CLKSimpleTextProvider(text: "Tempo restante: " + timeLeft + " minutos")
+        utilitarianLarge.textProvider = CLKSimpleTextProvider(text: "Temperatura: " + currentTemperature + "ºC")
         
         return utilitarianLarge
     }
