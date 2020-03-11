@@ -15,16 +15,11 @@ class ViewController: UIViewController {
     
     var circularProgressView: CircularProgressView!
 
-class ViewController: UIViewController, WCSessionDelegate  {
-    
-
-    @IBOutlet weak var temperatureTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
     }
-    
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         circularProgressView = CircularProgressView(radius: containerView.frame.height / 2 )
         circularProgressView.translatesAutoresizingMaskIntoConstraints = false
