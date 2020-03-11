@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4gw-g0-QO0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Temperature View Controller-->
+        <scene sceneID="tTk-py-Vxx">
+            <objects>
+                <viewController id="4gw-g0-QO0" customClass="TemperatureViewController" customModule="Geloou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xYc-bu-pdw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="temperaturaIdeal" translatesAutoresizingMaskIntoConstraints="NO" id="Adj-Cz-ze1">
+                                <rect key="frame" x="14.5" y="94" width="385" height="540"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="385" id="hU5-if-0iS"/>
+                                    <constraint firstAttribute="height" constant="540" id="jai-6m-8r3"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="0lB-LN-k9v">
+                                <rect key="frame" x="10" y="364" width="404" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="slider:" destination="4gw-g0-QO0" eventType="valueChanged" id="6AJ-mg-iGL"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPu-Bg-F0U">
+                                <rect key="frame" x="120.5" y="644" width="173" height="94"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egi-ES-4UR">
+                                <rect key="frame" x="32" y="787" width="350" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="0Mg-Zk-TWj"/>
+                                    <constraint firstAttribute="height" constant="50" id="TlG-eA-Aqh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="fqC-1q-cmO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <state key="normal" title="Gelar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="gelarActionButton:" destination="4gw-g0-QO0" eventType="touchUpInside" id="QIw-Pq-pi8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jAi-Iy-w8p" firstAttribute="bottom" secondItem="Egi-ES-4UR" secondAttribute="bottom" constant="25" id="1am-X1-68m"/>
+                            <constraint firstItem="TPu-Bg-F0U" firstAttribute="top" secondItem="Adj-Cz-ze1" secondAttribute="bottom" constant="10" id="3ws-f8-Wa0"/>
+                            <constraint firstItem="Egi-ES-4UR" firstAttribute="leading" secondItem="jAi-Iy-w8p" secondAttribute="leading" constant="32" id="5d3-fN-qgA"/>
+                            <constraint firstItem="0lB-LN-k9v" firstAttribute="leading" secondItem="jAi-Iy-w8p" secondAttribute="leading" constant="12" id="6Hm-ph-Pw9"/>
+                            <constraint firstItem="jAi-Iy-w8p" firstAttribute="bottom" secondItem="TPu-Bg-F0U" secondAttribute="bottom" constant="124" id="7W1-Yp-9qP"/>
+                            <constraint firstItem="Adj-Cz-ze1" firstAttribute="centerX" secondItem="xYc-bu-pdw" secondAttribute="centerX" id="HE8-EL-7db"/>
+                            <constraint firstItem="jAi-Iy-w8p" firstAttribute="trailing" secondItem="Egi-ES-4UR" secondAttribute="trailing" constant="32" id="IT7-hD-bzL"/>
+                            <constraint firstItem="Egi-ES-4UR" firstAttribute="top" secondItem="TPu-Bg-F0U" secondAttribute="bottom" constant="49" id="XWY-yV-1il"/>
+                            <constraint firstItem="TPu-Bg-F0U" firstAttribute="top" secondItem="0lB-LN-k9v" secondAttribute="bottom" constant="250" id="ZDs-MX-03W"/>
+                            <constraint firstItem="TPu-Bg-F0U" firstAttribute="centerX" secondItem="xYc-bu-pdw" secondAttribute="centerX" id="kO0-Zz-JOc"/>
+                            <constraint firstItem="jAi-Iy-w8p" firstAttribute="trailing" secondItem="0lB-LN-k9v" secondAttribute="trailing" constant="2" id="tSA-HW-eqN"/>
+                            <constraint firstItem="Adj-Cz-ze1" firstAttribute="centerY" secondItem="xYc-bu-pdw" secondAttribute="centerY" constant="-84" id="uML-Ss-6ib"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jAi-Iy-w8p"/>
+                    </view>
+                    <connections>
+                        <outlet property="gelarButton" destination="Egi-ES-4UR" id="BEd-XD-oha"/>
+                        <outlet property="imageTemperature" destination="Adj-Cz-ze1" id="EOo-Zw-UFj"/>
+                        <outlet property="temperatureLabel" destination="TPu-Bg-F0U" id="AqS-pV-HkW"/>
+                        <outlet property="temperatureSlider" destination="0lB-LN-k9v" id="wD4-km-yBg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJ9-fi-jnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213.04347826086959" y="458.70535714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="temperaturaIdeal" width="933" height="1348"/>
+    </resources>
+</document>

@@ -9,22 +9,11 @@
 import UIKit
 import WatchConnectivity
 
-class Model: ObservableObject {
-    static let shared = Model()
+class ViewController: UIViewController {
     
-    @Published var currentTemperature: Float = 10
-    @Published var targetTemperature: Float = 0
-    @Published var percent: Float = 64
-    @Published var timeLeft: Int = 2
+    @IBOutlet weak var containerView: UIView!
     
-    public func toDict() -> [String:Any] {
-        return ["current":currentTemperature,
-                "target":targetTemperature,
-                "percent":percent,
-                "timeLeft":timeLeft]
-    }
-    
-}
+    var circularProgressView: CircularProgressView!
 
 class ViewController: UIViewController, WCSessionDelegate  {
     
@@ -32,48 +21,28 @@ class ViewController: UIViewController, WCSessionDelegate  {
     @IBOutlet weak var temperatureTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-       assert(WCSession.isSupported(), "This sample requires Watch Connectivity support!")
-       WCSession.default.delegate = self
-       WCSession.default.activate()
-    }
-
-    @IBAction func sendToWatch(_ sender: Any) {
-                
-        let temp = temperatureTextField.text ?? "0"
-        
-        let message = Model.shared
-        message.currentTemperature = Float(temp) ?? -10
-        message.percent = 50
-        message.targetTemperature = 2
-        message.timeLeft = 5
-        
-            
-//        WCSession.default.sendMessage(message.toDict(), replyHandler: { (replyMessage) in
-//            print("replyMessage")
-//            print(replyMessage)
-//        }) { error in
-//            print("Deu error")
-//            print(error.localizedDescription)
-//        }
-        
-        WCSession.default.transferCurrentComplicationUserInfo(message.toDict())
-    }
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        
+        view.backgroundColor = .black
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        circularProgressView = CircularProgressView(radius: containerView.frame.height / 2 )
+        circularProgressView.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerView.addSubview(circularProgressView)
+        
+        setCircularProgressConstraints()
+        
+        circularProgressView.centralAreaLayer.fillColor = UIColor.red.cgColor
+        
+    }
     
+    fileprivate func setCircularProgressConstraints() {
+        circularProgressView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        circularProgressView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        circularProgressView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        circularProgressView.heightAnchor.constraint(equalTo: containerView.heightAnchor,multiplier: 1).isActive = true
+        circularProgressView.widthAnchor.constraint(equalTo: containerView.widthAnchor,multiplier: 1).isActive = true
+    }
 }
 

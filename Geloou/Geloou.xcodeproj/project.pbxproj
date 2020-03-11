@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C38E34D2418175F00B02DEF /* DrinksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C38E34C2418175F00B02DEF /* DrinksListCell.swift */; };
+		260525222412C96600B9AE0A /* DrinkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260525212412C96600B9AE0A /* DrinkListViewController.swift */; };
+		A767BC242411B71F0081CF66 /* BluetoothScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A767BC232411B71F0081CF66 /* BluetoothScreen.storyboard */; };
+		A767BC262411B8AC0081CF66 /* BluetoothConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767BC252411B8AC0081CF66 /* BluetoothConnectViewController.swift */; };
 		A79E2B0124117043005860D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E2B0024117043005860D9 /* AppDelegate.swift */; };
 		A79E2B0324117043005860D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E2B0224117043005860D9 /* SceneDelegate.swift */; };
 		A79E2B0524117043005860D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E2B0424117043005860D9 /* ViewController.swift */; };
@@ -30,6 +34,13 @@
 		AA76B7592411823F000724B9 /* GeloouWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA76B7332411823D000724B9 /* GeloouWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA76B7632411EFD8000724B9 /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76B7622411EFD8000724B9 /* RingShape.swift */; };
 		AAF377992416CCF60092E989 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF377982416CCF60092E989 /* Model.swift */; };
+		A79E2B2324118B48005860D9 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E2B2224118B48005860D9 /* CircularProgressView.swift */; };
+		AB0B3B5224117B0100B2168B /* Temperature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0B3B5124117B0100B2168B /* Temperature.storyboard */; };
+		AB0B3B5424117B2000B2168B /* TemperatureViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0B3B5324117B2000B2168B /* TemperatureViewViewController.swift */; };
+		ABBE4A022417FE8B009431DA /* ArduinoCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBE4A012417FE8B009431DA /* ArduinoCommunicator.swift */; };
+		CF79182424168E820021F2A1 /* DrinksList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF79182324168E820021F2A1 /* DrinksList.storyboard */; };
+		CF79182624168E940021F2A1 /* DrinksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79182524168E940021F2A1 /* DrinksListViewController.swift */; };
+		CF79182A2416C6DC0021F2A1 /* DrinkTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7918292416C6DC0021F2A1 /* DrinkTypeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +93,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C38E34C2418175F00B02DEF /* DrinksListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListCell.swift; sourceTree = "<group>"; };
+		260525212412C96600B9AE0A /* DrinkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListViewController.swift; sourceTree = "<group>"; };
+		A767BC232411B71F0081CF66 /* BluetoothScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BluetoothScreen.storyboard; sourceTree = "<group>"; };
+		A767BC252411B8AC0081CF66 /* BluetoothConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectViewController.swift; sourceTree = "<group>"; };
 		A79E2AFD24117043005860D9 /* Geloou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geloou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79E2B0024117043005860D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A79E2B0224117043005860D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +127,13 @@
 		AA76B7562411823F000724B9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		AA76B7622411EFD8000724B9 /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
 		AAF377982416CCF60092E989 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A79E2B2224118B48005860D9 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		AB0B3B5124117B0100B2168B /* Temperature.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Temperature.storyboard; sourceTree = "<group>"; };
+		AB0B3B5324117B2000B2168B /* TemperatureViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewViewController.swift; sourceTree = "<group>"; };
+		ABBE4A012417FE8B009431DA /* ArduinoCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArduinoCommunicator.swift; sourceTree = "<group>"; };
+		CF79182324168E820021F2A1 /* DrinksList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrinksList.storyboard; sourceTree = "<group>"; };
+		CF79182524168E940021F2A1 /* DrinksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListViewController.swift; sourceTree = "<group>"; };
+		CF7918292416C6DC0021F2A1 /* DrinkTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTypeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,13 +186,23 @@
 		A79E2AFF24117043005860D9 /* Geloou */ = {
 			isa = PBXGroup;
 			children = (
+				ABBE4A002417FE5B009431DA /* Arduino */,
+				AB0B3B5024117AC900B2168B /* ThermometerScreen */,
 				A79E2B0024117043005860D9 /* AppDelegate.swift */,
 				A79E2B0224117043005860D9 /* SceneDelegate.swift */,
 				A79E2B0424117043005860D9 /* ViewController.swift */,
 				A79E2B0624117043005860D9 /* Main.storyboard */,
+				CF79182324168E820021F2A1 /* DrinksList.storyboard */,
+				1C38E34C2418175F00B02DEF /* DrinksListCell.swift */,
+				CF79182524168E940021F2A1 /* DrinksListViewController.swift */,
+				CF7918292416C6DC0021F2A1 /* DrinkTypeViewController.swift */,
 				A79E2B0924117045005860D9 /* Assets.xcassets */,
 				A79E2B0B24117045005860D9 /* LaunchScreen.storyboard */,
 				A79E2B0E24117045005860D9 /* Info.plist */,
+				A79E2B2224118B48005860D9 /* CircularProgressView.swift */,
+				A767BC232411B71F0081CF66 /* BluetoothScreen.storyboard */,
+				A767BC252411B8AC0081CF66 /* BluetoothConnectViewController.swift */,
+				260525212412C96600B9AE0A /* DrinkListViewController.swift */,
 			);
 			path = Geloou;
 			sourceTree = "<group>";
@@ -221,6 +253,21 @@
 				AA76B7532411823F000724B9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+		AB0B3B5024117AC900B2168B /* ThermometerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB0B3B5124117B0100B2168B /* Temperature.storyboard */,
+				AB0B3B5324117B2000B2168B /* TemperatureViewViewController.swift */,
+			);
+			path = ThermometerScreen;
+			sourceTree = "<group>";
+		};
+		ABBE4A002417FE5B009431DA /* Arduino */ = {
+			isa = PBXGroup;
+			children = (
+				ABBE4A012417FE8B009431DA /* ArduinoCommunicator.swift */,
+			);
+			path = Arduino;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +398,9 @@
 				A79E2B0D24117045005860D9 /* LaunchScreen.storyboard in Resources */,
 				A79E2B0A24117045005860D9 /* Assets.xcassets in Resources */,
 				A79E2B0824117043005860D9 /* Main.storyboard in Resources */,
+				CF79182424168E820021F2A1 /* DrinksList.storyboard in Resources */,
+				A767BC242411B71F0081CF66 /* BluetoothScreen.storyboard in Resources */,
+				AB0B3B5224117B0100B2168B /* Temperature.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,9 +436,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A767BC262411B8AC0081CF66 /* BluetoothConnectViewController.swift in Sources */,
+				260525222412C96600B9AE0A /* DrinkListViewController.swift in Sources */,
 				A79E2B0524117043005860D9 /* ViewController.swift in Sources */,
+				1C38E34D2418175F00B02DEF /* DrinksListCell.swift in Sources */,
+				ABBE4A022417FE8B009431DA /* ArduinoCommunicator.swift in Sources */,
+				CF79182A2416C6DC0021F2A1 /* DrinkTypeViewController.swift in Sources */,
 				A79E2B0124117043005860D9 /* AppDelegate.swift in Sources */,
+				A79E2B2324118B48005860D9 /* CircularProgressView.swift in Sources */,
+				AB0B3B5424117B2000B2168B /* TemperatureViewViewController.swift in Sources */,
 				A79E2B0324117043005860D9 /* SceneDelegate.swift in Sources */,
+				CF79182624168E940021F2A1 /* DrinksListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,13 +642,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V4HVD5P383;
+				DEVELOPMENT_TEAM = A4YYTD745K;
 				INFOPLIST_FILE = Geloou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = academy.Geloou;
+				PRODUCT_BUNDLE_IDENTIFIER = academy.Geloou1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -602,13 +660,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V4HVD5P383;
+				DEVELOPMENT_TEAM = A4YYTD745K;
 				INFOPLIST_FILE = Geloou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = academy.Geloou;
+				PRODUCT_BUNDLE_IDENTIFIER = academy.Geloou1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
