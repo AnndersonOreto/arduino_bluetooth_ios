@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 class ViewController: UIViewController {
     
@@ -18,8 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
     }
-    
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         circularProgressView = CircularProgressView(radius: containerView.frame.height / 2 )
         circularProgressView.translatesAutoresizingMaskIntoConstraints = false
