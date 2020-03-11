@@ -17,13 +17,20 @@ class DrinkListViewController: UIViewController {
     @IBOutlet weak var drinkTypeLabel: UILabel!
     @IBOutlet weak var idealTemperatureLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var estimatedLabel: UILabel!
+    @IBOutlet weak var estimatedTimeLabel: UILabel!
+    var temperatureArray: [Double] = []
     
     // MARK: - arduino communicator
     private var communicator: ArduinoCommunicator!
+    
+    var is_cooling: Bool = false
 //    private var loadingComponent: LoadingComponent!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+            
+        is_cooling = UserDefaults.standard.bool(forKey: "gelou-state")
         
         self.title = "Drink"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -53,7 +60,11 @@ class DrinkListViewController: UIViewController {
         circularProgressView.centralAreaLayer.fillColor = bluetoothColor.cgColor
         circularProgressView.alpha = 1
         circularProgressView.translatesAutoresizingMaskIntoConstraints = false
-        circularProgressView.startProgressBarAnimation(seconds: 10)
+        if is_cooling {
+            
+        } else {
+        circularProgressView.startProgressBarAnimation(seconds: 1)
+        }
 
         circularView.addSubview(circularProgressView)
 
@@ -61,6 +72,52 @@ class DrinkListViewController: UIViewController {
     }
     
     @IBAction func confirmationAction(_ sender: UIButton) {
+        
+        if is_cooling {
+            UserDefaults.standard.set(false, forKey: "gelou-state")
+        } else {
+            
+        }
+    }
+    
+    public func updateState(temperature: String) {
+        
+        if is_cooling {
+            confirmButton.setTitle("Retirei", for: .normal)
+            degreesLabel.text = temperature
+            drinkTypeLabel.text = "Cerveja lata"
+            estimatedLabel.text = "estimado"
+            estimatedTimeLabel.text = estimatedTime()
+            idealTemperatureLabel.text = "ideal 5ºC"
+        } else {
+            degreesLabel.text = "bebida"
+            confirmButton.setTitle("Gelar", for: .normal)
+            drinkTypeLabel.text = "sem drink"
+            estimatedLabel.text = "gele uma nova"
+            estimatedTimeLabel.text = "-"
+            idealTemperatureLabel.text = "sem temperatura ideal"
+        }
+    }
+    
+    func estimatedTime() -> String {
+        
+        if temperatureArray.count >= 5 {
+            
+            var resp: Double = 0.0
+            let temperatureSize: Double = Double(temperatureArray.count)
+            
+            for i in 1..<temperatureArray.count {
+                resp += (temperatureArray[i] - temperatureArray[i-1])
+            }
+            
+            resp = resp / temperatureSize
+            resp = resp / 10
+            let temperature : Double = UserDefaults.standard.double(forKey: "gelou-temperature")
+            resp = (temperatureArray[temperatureArray.count-1] - temperature) / resp
+            
+            return "\(resp)"
+        }
+        return ""
     }
     
     fileprivate func setCircularProgressConstraints() {
@@ -79,7 +136,10 @@ extension DrinkListViewController: ArduinoCommunicatorDelegate {
     }
     func communicator(_ communicator: ArduinoCommunicator, didRead data: Data) {
         //print("\n", String(data: data, encoding: .utf8)!)
-        degreesLabel.text = String(data: data, encoding: .utf8)!.split(separator: ".")[0] + "ºC"
+        updateState(temperature: String(data: data, encoding: .utf8)!.split(separator: ".")[0] + "ºC")
+        if temperatureArray.count < 5 {
+            temperatureArray.append(Double(String(data: data, encoding: .utf8) ?? "0.0") ?? 0.0)
+        }
     }
     func communicator(_ communicator: ArduinoCommunicator, didWrite data: Data) {
         print(#function)

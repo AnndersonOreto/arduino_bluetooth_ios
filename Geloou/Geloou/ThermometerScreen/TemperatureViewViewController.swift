@@ -17,6 +17,8 @@ class TemperatureViewController: UIViewController {
     
     @IBOutlet weak var gelarButton: UIButton!
     @IBAction func gelarActionButton(_ sender: UIButton) {
+        let temperature: Double = Double(temperatureLabel.text?.split(separator: "º")[0] ?? "0.0") ?? 1.0
+        UserDefaults.standard.set(temperature, forKey: "gelou-temperature")
         UserDefaults.standard.set(true, forKey: "gelou-state") // salva estado
         self.dismiss(animated: true, completion: nil)
     }
