@@ -28,7 +28,7 @@ extension String : DataConvertible {
 
 extension UInt8: DataConvertible {
     var data: Data {
-        return Data.init(bytes: [self])
+        return Data.init([self])
     }
 }
 

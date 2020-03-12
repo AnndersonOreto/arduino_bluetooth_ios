@@ -12,7 +12,7 @@ class DrinksListViewController: UIViewController {
 
     
     let drinks: [(String, [String])] =
-        [("Cerveja", ["Lata","Latão","Garrafa"])]
+        [("Cerveja", ["Lata","Garrafa"])]
     
     var drinkSelected: (String, [String]) = ("", [])
     

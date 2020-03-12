@@ -19,6 +19,7 @@ class DrinkListViewController: UIViewController {
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var estimatedLabel: UILabel!
     @IBOutlet weak var estimatedTimeLabel: UILabel!
+    var chamou: Bool = true
     var temperatureArray: [Double] = []
     
     // MARK: - arduino communicator
@@ -31,6 +32,7 @@ class DrinkListViewController: UIViewController {
         super.viewDidLoad()
             
         is_cooling = UserDefaults.standard.bool(forKey: "gelou-state")
+        updateState(temperature: "")
         
         self.title = "Drink"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -43,6 +45,7 @@ class DrinkListViewController: UIViewController {
         super.viewWillAppear(animated)
         
 //        self.loadingComponent = LoadingComponent()
+        is_cooling = UserDefaults.standard.bool(forKey: "gelou-state")
         
         self.communicator = ArduinoCommunicator(delegate: self)
         
@@ -73,22 +76,30 @@ class DrinkListViewController: UIViewController {
     
     @IBAction func confirmationAction(_ sender: UIButton) {
         
-        if is_cooling {
+        if UserDefaults.standard.bool(forKey: "gelou-state") {
             UserDefaults.standard.set(false, forKey: "gelou-state")
+            is_cooling = false
+            updateState(temperature: "")
         } else {
-            
+            performSegue(withIdentifier: "drinkTypeSegue", sender: self)
         }
     }
     
     public func updateState(temperature: String) {
         
-        if is_cooling {
+        if UserDefaults.standard.bool(forKey: "gelou-state") {
             confirmButton.setTitle("Retirei", for: .normal)
             degreesLabel.text = temperature
             drinkTypeLabel.text = "Cerveja lata"
-            estimatedLabel.text = "estimado"
-            estimatedTimeLabel.text = estimatedTime()
-            idealTemperatureLabel.text = "ideal 5ºC"
+            if temperatureArray.count < 5 {
+                estimatedLabel.text = "calculando..."
+            } else {
+                estimatedLabel.text = "estimado"
+            }
+            if chamou {
+                estimatedTimeLabel.text = estimatedTime()
+            }
+            idealTemperatureLabel.text = "ideal \(UserDefaults.standard.double(forKey: "gelou-temperature"))ºC"
         } else {
             degreesLabel.text = "bebida"
             confirmButton.setTitle("Gelar", for: .normal)
@@ -110,12 +121,15 @@ class DrinkListViewController: UIViewController {
                 resp += (temperatureArray[i] - temperatureArray[i-1])
             }
             
-            resp = resp / temperatureSize
+            resp = resp / temperatureSize-1
             resp = resp / 10
             let temperature : Double = UserDefaults.standard.double(forKey: "gelou-temperature")
             resp = (temperatureArray[temperatureArray.count-1] - temperature) / resp
             
-            return "\(resp)"
+            circularProgressView.startProgressBarAnimation(seconds: abs(resp))
+            chamou = false
+            
+            return "\(Int(abs(resp))/60) min"
         }
         return ""
     }

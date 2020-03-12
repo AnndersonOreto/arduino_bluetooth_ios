@@ -17,7 +17,7 @@ class TemperatureViewController: UIViewController {
     
     @IBOutlet weak var gelarButton: UIButton!
     @IBAction func gelarActionButton(_ sender: UIButton) {
-        let temperature: Double = Double(temperatureLabel.text?.split(separator: "º")[0] ?? "0.0") ?? 1.0
+        let temperature: Double = Double(Int(temperatureSlider.value))
         UserDefaults.standard.set(temperature, forKey: "gelou-temperature")
         UserDefaults.standard.set(true, forKey: "gelou-state") // salva estado
         self.dismiss(animated: true, completion: nil)
@@ -30,6 +30,7 @@ class TemperatureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Rotate the slider vertically
+        print(drinkSelected)
         temperatureSlider.transform = CGAffineTransform(rotationAngle: CGFloat( -Double.pi/2 ))
         temperatureLabel.text = String(Int(temperatureSlider.value)) + "ºC"
     }

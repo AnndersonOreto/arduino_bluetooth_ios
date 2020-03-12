@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mTs-cM-OeK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mTs-cM-OeK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -130,7 +130,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="yjv-zV-2zh" kind="show" id="Xhe-tY-da5"/>
+                                    <action selector="confirmationAction:" destination="EiV-6B-EP3" eventType="touchUpInside" id="stw-wX-AX2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -166,6 +166,7 @@
                         <outlet property="estimatedLabel" destination="LMz-G9-POq" id="czD-LC-YCb"/>
                         <outlet property="estimatedTimeLabel" destination="OS3-mz-nBT" id="Bn5-yc-j8s"/>
                         <outlet property="idealTemperatureLabel" destination="3vZ-Rq-5p5" id="wml-g6-E1j"/>
+                        <segue destination="yjv-zV-2zh" kind="show" identifier="drinkTypeSegue" id="9Jd-HS-yWv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpF-y3-Eg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
